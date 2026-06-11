@@ -1,275 +1,163 @@
+import Link from "next/link";
+
+const stats = [
+  { label: "Tickets resolved by AI", value: "70%" },
+  { label: "Avg. triage time", value: "18s" },
+  { label: "Support visibility", value: "24/7" },
+];
+
+const features = [
+  {
+    title: "AI Ticket Classification",
+    text: "Classify incidents, requests and service issues automatically using ticket description, priority signals and past patterns.",
+  },
+  {
+    title: "Smart Routing",
+    text: "Route tickets to the right support group, sub-group, resolver team and engineer before queues get messy.",
+  },
+  {
+    title: "Resolution Engine",
+    text: "Suggest fixes, probable root causes and reusable knowledge articles from similar past incidents.",
+  },
+  {
+    title: "Executive Command Center",
+    text: "Track SLA risk, MTTR, AI adoption, workload and support health from one leadership dashboard.",
+  },
+];
+
+const solutions = ["IT Service Desk", "Customer Support", "Shared Services", "Enterprise Operations"];
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white overflow-hidden">
-      <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#0B0F19]/80 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-violet-600 font-black shadow-[0_0_40px_rgba(124,58,237,.5)]">
-              T
-            </div>
-            <span className="text-2xl font-black tracking-tight">Ticktsphr</span>
-          </div>
-
-          <nav className="hidden gap-8 text-sm font-semibold text-gray-400 md:flex">
+    <main className="min-h-screen bg-slate-950 text-white">
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+          <Link href="/" className="flex items-center gap-3">
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-violet-600 font-black shadow-lg shadow-violet-600/30">T</div>
+            <span className="text-2xl font-bold tracking-tight">Ticktsphr</span>
+          </Link>
+          <nav className="hidden items-center gap-8 text-sm font-semibold text-slate-300 md:flex">
             <a href="#features" className="hover:text-white">Features</a>
             <a href="#solutions" className="hover:text-white">Solutions</a>
-            <a href="#pricing" className="hover:text-white">Pricing</a>
-            <a href="#security" className="hover:text-white">Security</a>
+            <Link href="/pricing" className="hover:text-white">Pricing</Link>
+            <Link href="/about" className="hover:text-white">About</Link>
+            <Link href="/contact" className="hover:text-white">Contact</Link>
           </nav>
-
-          <a
-            href="#demo"
-            className="rounded-full bg-violet-600 px-6 py-3 text-sm font-bold shadow-[0_0_45px_rgba(124,58,237,.45)] hover:bg-violet-500"
-          >
+          <Link href="/book-demo" className="rounded-full bg-violet-600 px-6 py-3 text-sm font-bold shadow-lg shadow-violet-600/30 hover:bg-violet-500">
             Book a Demo
-          </a>
+          </Link>
         </div>
       </header>
 
-      <section className="relative px-6 pb-24 pt-36 md:pt-44">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(124,58,237,.35),transparent_30%),radial-gradient(circle_at_80%_15%,rgba(16,185,129,.18),transparent_28%)]" />
-
-        <div className="relative mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-2">
+      <section className="relative overflow-hidden border-b border-white/10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(124,58,237,.35),transparent_35%),radial-gradient(circle_at_top_right,rgba(20,184,166,.22),transparent_30%)]" />
+        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-2 lg:py-32">
           <div>
-            <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-gray-300">
-              <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_18px_rgba(16,185,129,.9)]" />
-              AI-native support automation
+            <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-slate-200">
+              <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
+              AI-powered ticket management
             </div>
-
-            <h1 className="max-w-3xl text-5xl font-black leading-[0.95] tracking-[-0.07em] md:text-7xl">
-              Resolve up to 70% of support tickets before an agent touches them.
+            <h1 className="max-w-3xl text-5xl font-black leading-[0.95] tracking-tight sm:text-7xl">
+              Predict. Route. Resolve. Before support gets buried.
             </h1>
-
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-gray-400">
-              Ticktsphr classifies, routes, resolves and learns from every ticket —
-              reducing response times, protecting SLA commitments and freeing teams
-              for high-value work.
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-300">
+              Ticktsphr is an AI-native ticket management platform that classifies tickets, predicts priority, routes work to the right resolver team and recommends faster resolutions using enterprise knowledge.
             </p>
-
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <a href="#demo" className="rounded-full bg-violet-600 px-8 py-4 text-center text-sm font-black hover:bg-violet-500">
-                Start Free Trial
-              </a>
-              <a href="#product" className="rounded-full border border-white/15 bg-white/5 px-8 py-4 text-center text-sm font-black hover:bg-white/10">
+              <Link href="/book-demo" className="rounded-full bg-violet-600 px-8 py-4 text-center font-bold shadow-xl shadow-violet-600/30 hover:bg-violet-500">
+                Book a Demo
+              </Link>
+              <a href="#product" className="rounded-full border border-white/15 bg-white/5 px-8 py-4 text-center font-bold hover:bg-white/10">
                 See Product
               </a>
             </div>
-
-            <div className="mt-12 grid grid-cols-3 gap-5">
-              {[
-                ["70%", "Ticket automation"],
-                ["18s", "Avg response"],
-                ["24/7", "AI coverage"],
-              ].map(([value, label]) => (
-                <div key={label} className="border-l border-white/10 pl-4">
-                  <p className="text-3xl font-black">{value}</p>
-                  <p className="mt-1 text-sm text-gray-400">{label}</p>
+            <div className="mt-12 grid max-w-xl grid-cols-3 gap-4">
+              {stats.map((item) => (
+                <div key={item.label} className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <div className="text-2xl font-black">{item.value}</div>
+                  <div className="mt-1 text-xs text-slate-400">{item.label}</div>
                 </div>
               ))}
             </div>
           </div>
 
-          <div id="product" className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-4 shadow-[0_0_80px_rgba(124,58,237,.25)] backdrop-blur-xl">
-            <div className="rounded-[1.5rem] border border-white/10 bg-[#0B0F19]">
-              <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
-                <div className="flex gap-2">
-                  <span className="h-3 w-3 rounded-full bg-red-400" />
-                  <span className="h-3 w-3 rounded-full bg-yellow-400" />
-                  <span className="h-3 w-3 rounded-full bg-green-400" />
-                </div>
-                <p className="hidden text-xs text-gray-500 sm:block">ticktsphr.ai/dashboard</p>
+          <div id="product" className="rounded-[2rem] border border-white/10 bg-slate-900/80 p-6 shadow-2xl shadow-violet-950/40">
+            <div className="mb-6 flex gap-2">
+              <span className="h-3 w-3 rounded-full bg-red-400" />
+              <span className="h-3 w-3 rounded-full bg-yellow-400" />
+              <span className="h-3 w-3 rounded-full bg-emerald-400" />
+            </div>
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                <p className="text-sm text-slate-400">Resolved by AI</p>
+                <p className="mt-2 text-3xl font-black">72%</p>
               </div>
-
-              <div className="grid gap-4 p-5">
-                <div className="grid gap-4 sm:grid-cols-3">
-                  {[
-                    ["Resolved by AI", "72%"],
-                    ["SLA Risk", "Low"],
-                    ["Saved Hours", "148"],
-                  ].map(([label, value]) => (
-                    <div key={label} className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-                      <p className="text-sm text-gray-400">{label}</p>
-                      <p className={`mt-2 text-3xl font-black ${value === "Low" ? "text-emerald-400" : ""}`}>
-                        {value}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-                  <div className="mb-5 flex items-center justify-between">
-                    <h3 className="font-bold">Live AI Resolution Feed</h3>
-                    <span className="rounded-full bg-emerald-400/10 px-3 py-1 text-xs font-bold text-emerald-400">
-                      Live
-                    </span>
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                <p className="text-sm text-slate-400">SLA Risk</p>
+                <p className="mt-2 text-3xl font-black text-emerald-400">Low</p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                <p className="text-sm text-slate-400">Saved Hours</p>
+                <p className="mt-2 text-3xl font-black">148</p>
+              </div>
+            </div>
+            <div className="mt-6 rounded-3xl border border-white/10 bg-slate-950 p-6">
+              <div className="mb-5 flex items-center justify-between">
+                <h3 className="font-bold">Live AI Resolution Feed</h3>
+                <span className="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-bold text-emerald-300">Live</span>
+              </div>
+              {["Password reset issue", "Invoice access request", "App login failure"].map((ticket, i) => (
+                <div key={ticket} className="mb-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4 last:mb-0">
+                  <div className="flex items-center justify-between gap-4">
+                    <p className="font-bold">{ticket}</p>
+                    <span className="rounded-full bg-violet-500/20 px-3 py-1 text-xs font-bold text-violet-200">{i === 0 ? "Resolved" : i === 1 ? "Handoff" : "Review"}</span>
                   </div>
-
-                  {[
-                    ["Password reset issue", "Resolved using verified knowledge article.", "Resolved"],
-                    ["Invoice access request", "Routed to Billing Ops with full customer history.", "Handoff"],
-                    ["App login failure", "AI suggested fix. Waiting for approval.", "Review"],
-                  ].map(([title, desc, tag]) => (
-                    <div key={title} className="mb-3 rounded-xl border border-white/10 bg-[#0B0F19]/70 p-4">
-                      <div className="flex justify-between gap-4">
-                        <div>
-                          <p className="font-semibold">{title}</p>
-                          <p className="mt-1 text-sm text-gray-400">{desc}</p>
-                        </div>
-                        <span className="h-fit rounded-full bg-violet-500/15 px-3 py-1 text-xs font-bold text-violet-300">
-                          {tag}
-                        </span>
-                      </div>
-                    </div>
-                  ))}
+                  <p className="mt-2 text-sm text-slate-400">AI suggested next step using verified knowledge and similar incidents.</p>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-white/[0.025] px-6 py-10 text-center">
-        <p className="mb-7 text-xs font-bold uppercase tracking-[0.3em] text-gray-500">
-          Works with your support stack
-        </p>
-        <div className="mx-auto grid max-w-5xl grid-cols-2 gap-8 text-xl font-black text-white/40 md:grid-cols-5">
-          <span>Slack</span>
-          <span>Zendesk</span>
-          <span>Intercom</span>
-          <span>Jira</span>
-          <span>Freshdesk</span>
-        </div>
-      </section>
-
       <section id="features" className="mx-auto max-w-7xl px-6 py-24">
-        <p className="text-sm font-black uppercase tracking-[0.25em] text-emerald-400">Core Platform</p>
-        <h2 className="mt-5 max-w-3xl text-4xl font-black leading-tight tracking-[-0.05em] md:text-6xl">
-          Support automation without losing human control.
-        </h2>
-
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {[
-            ["⚡", "Instant Resolution", "Deflect repetitive tickets in seconds using your knowledge base, ticket history and business rules."],
-            ["🤝", "Human-in-the-Loop", "Escalate complex cases with summaries, probable root cause, priority and next-best action."],
-            ["🧠", "Continuous Learning", "Every resolution improves routing, strengthens the knowledge base and exposes documentation gaps."],
-          ].map(([icon, title, desc]) => (
-            <article key={title} className="rounded-[2rem] border border-white/10 bg-white/[0.035] p-8 transition hover:-translate-y-2 hover:border-violet-500/60 hover:bg-white/[0.06]">
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-violet-500/20 text-2xl">
-                {icon}
-              </div>
-              <h3 className="text-2xl font-black">{title}</h3>
-              <p className="mt-4 text-gray-400">{desc}</p>
-            </article>
+        <div className="max-w-3xl">
+          <p className="font-bold uppercase tracking-[0.3em] text-emerald-400">Platform</p>
+          <h2 className="mt-4 text-4xl font-black tracking-tight sm:text-5xl">One operating layer for modern support teams.</h2>
+        </div>
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {features.map((feature) => (
+            <div key={feature.title} className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 hover:bg-white/[0.06]">
+              <h3 className="text-xl font-black">{feature.title}</h3>
+              <p className="mt-4 leading-7 text-slate-400">{feature.text}</p>
+            </div>
           ))}
         </div>
       </section>
 
-      <section id="solutions" className="border-y border-white/10 bg-white/[0.02] px-6 py-24">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-sm font-black uppercase tracking-[0.25em] text-violet-400">Built For</p>
-          <h2 className="mt-5 max-w-3xl text-4xl font-black tracking-[-0.05em] md:text-6xl">
-            One AI layer for every support queue.
-          </h2>
-
-          <div className="mt-14 grid gap-6 md:grid-cols-4">
-            {[
-              ["IT Service Desk", "Password resets, access requests, incidents and internal support."],
-              ["Customer Support", "Instant replies, smart routing and consistent customer experience."],
-              ["Shared Services", "Finance, HR, procurement and operations requests in one flow."],
-              ["Enterprise Ops", "SLA intelligence, escalations and executive visibility."],
-            ].map(([title, desc]) => (
-              <div key={title} className="rounded-3xl border border-white/10 bg-[#0B0F19]/70 p-6">
-                <h3 className="text-xl font-black">{title}</h3>
-                <p className="mt-3 text-sm leading-6 text-gray-400">{desc}</p>
+      <section id="solutions" className="border-y border-white/10 bg-white/[0.02]">
+        <div className="mx-auto max-w-7xl px-6 py-24">
+          <h2 className="text-4xl font-black tracking-tight">Built for every support queue.</h2>
+          <div className="mt-10 grid gap-6 md:grid-cols-4">
+            {solutions.map((item) => (
+              <div key={item} className="rounded-3xl border border-white/10 bg-slate-950 p-6">
+                <h3 className="text-xl font-black">{item}</h3>
+                <p className="mt-4 text-slate-400">AI triage, routing, SLA visibility and resolution intelligence for {item.toLowerCase()}.</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="pricing" className="mx-auto max-w-7xl px-6 py-24">
-        <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 md:p-12">
-          <div className="grid gap-10 md:grid-cols-2 md:items-center">
-            <div>
-              <p className="text-sm font-black uppercase tracking-[0.25em] text-emerald-400">Flexible Pricing</p>
-              <h2 className="mt-5 text-4xl font-black tracking-[-0.05em] md:text-5xl">
-                Start lean. Scale into full autonomous support.
-              </h2>
-              <p className="mt-5 text-gray-400">
-                Ideal for B2B SaaS, IT support, shared services and enterprise service desks.
-              </p>
-            </div>
-
-            <div className="rounded-3xl border border-white/10 bg-[#0B0F19]/70 p-7">
-              <p className="text-gray-400">Automation Target</p>
-              <h3 className="mt-2 text-5xl font-black">Up to 70%</h3>
-              <div className="mt-6 h-3 rounded-full bg-white/10">
-                <div className="h-3 w-[70%] rounded-full bg-gradient-to-r from-emerald-400 to-violet-500" />
-              </div>
-              <a href="#demo" className="mt-7 inline-block rounded-full bg-violet-600 px-6 py-3 text-sm font-black">
-                Talk to Sales
-              </a>
-            </div>
-          </div>
+      <section className="mx-auto max-w-7xl px-6 py-24">
+        <div className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-violet-600 to-slate-900 p-10 md:p-16">
+          <h2 className="max-w-3xl text-4xl font-black tracking-tight sm:text-5xl">Ready to modernize support operations?</h2>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-violet-100">Book a walkthrough and see how Ticktsphr can reduce manual triage, improve SLA control and build reusable support knowledge.</p>
+          <Link href="/book-demo" className="mt-8 inline-block rounded-full bg-white px-8 py-4 font-black text-slate-950 hover:bg-slate-100">
+            Book a Demo
+          </Link>
         </div>
       </section>
-
-      <section id="security" className="mx-auto max-w-7xl px-6 pb-24">
-        <div className="rounded-[2rem] border border-white/10 bg-white/[0.035] p-8 md:p-12">
-          <div className="grid gap-8 md:grid-cols-2 md:items-center">
-            <div>
-              <h2 className="text-4xl font-black tracking-[-0.05em] md:text-5xl">
-                Enterprise-grade controls from day one.
-              </h2>
-              <p className="mt-5 text-gray-400">
-                Built for secure workflows, auditable AI decisions, privacy-conscious operations and controlled human approval.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap gap-4">
-              {["SOC2 Ready", "GDPR Aligned", "Role-Based Access", "Audit Trails"].map((badge) => (
-                <span key={badge} className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-5 py-3 text-sm font-black text-emerald-400">
-                  {badge}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="demo" className="mx-auto max-w-7xl px-6 pb-24">
-        <div className="rounded-[2.5rem] border border-violet-500/40 bg-gradient-to-br from-violet-700/50 via-white/[0.04] to-emerald-500/20 p-10 md:p-16">
-          <h2 className="max-w-4xl text-4xl font-black leading-tight tracking-[-0.05em] md:text-6xl">
-            Turn your support queue into an AI resolution engine.
-          </h2>
-          <p className="mt-6 max-w-2xl text-lg text-gray-300">
-            Launch faster responses, cleaner escalations, stronger SLAs and measurable AI adoption.
-          </p>
-          <a href="mailto:hello@ticktsphr.com" className="mt-8 inline-block rounded-full bg-white px-8 py-4 text-sm font-black text-[#0B0F19]">
-            Get Started
-          </a>
-        </div>
-      </section>
-
-      <footer className="border-t border-white/10 px-6 py-10">
-        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-8 md:flex-row">
-          <div>
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-600 font-black">T</div>
-              <span className="text-xl font-black">Ticktsphr</span>
-            </div>
-            <p className="mt-3 text-sm text-gray-500">Predict. Route. Resolve.</p>
-          </div>
-
-          <div className="flex flex-wrap gap-6 text-sm font-semibold text-gray-400">
-            <a href="#features">Features</a>
-            <a href="#solutions">Solutions</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#security">Security</a>
-            <a href="#">Privacy Policy</a>
-          </div>
-        </div>
-      </footer>
     </main>
   );
 }
