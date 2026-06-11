@@ -1,54 +1,113 @@
 import Link from "next/link";
 
-const principles = [
+const metrics = [
+  { value: "70%", label: "Manual triage reduction" },
+  { value: "18s", label: "Average AI classification" },
+  { value: "40%", label: "Target MTTR improvement" },
+  { value: "24/7", label: "Operational visibility" },
+];
+
+const capabilities = [
   {
-    title: "AI-first support",
-    text: "Support operations should not depend only on manual reading, tagging and queue movement.",
+    title: "AI Ticket Classification",
+    text: "Classify incidents, service requests, approvals and operational issues automatically from ticket content.",
   },
   {
-    title: "Enterprise depth",
-    text: "Ticktsphr is shaped by real implementation, support and transformation experience across complex organizations.",
+    title: "Smart Assignment Engine",
+    text: "Recommend support group, subgroup, resolver team and engineer using context and historical patterns.",
   },
   {
-    title: "Operational intelligence",
-    text: "Leadership needs more than reports. They need signals, risks, patterns and recommended action.",
+    title: "Resolution Intelligence",
+    text: "Suggest probable root cause, next action, duplicate tickets and reusable resolution guidance.",
   },
   {
-    title: "Knowledge reuse",
-    text: "Every resolved issue should make the next similar issue easier, faster and cleaner to resolve.",
+    title: "Executive Command Center",
+    text: "Give leaders live visibility into SLA risk, backlog, MTTR, workload and AI adoption.",
   },
 ];
 
-const roadmap = [
-  ["2026", "AI Ticket Classification"],
-  ["2026", "Smart Routing Engine"],
-  ["2026", "Resolution Intelligence"],
-  ["2026", "Executive Command Center"],
-  ["2027", "Predictive Support Operations"],
-  ["2027", "Autonomous Resolution Workflows"],
+const workflow = [
+  ["01", "Capture", "Tickets arrive from portal, email, service desk or imports."],
+  ["02", "Understand", "AI reads the ticket and predicts category, priority and ownership."],
+  ["03", "Route", "The right support path is recommended instantly."],
+  ["04", "Resolve", "Agents get suggested fixes, RCA hints and duplicate signals."],
+  ["05", "Learn", "Each resolution strengthens future recommendations."],
 ];
 
-export default function AboutPage() {
+const comparisonRows = [
+  ["AI Ticket Classification", "Manual", "Add-on / configured", "Limited", "Limited", "Native"],
+  ["Resolver Assignment", "Manual", "Rules / workflow", "Workflow", "Rules", "AI-driven"],
+  ["Probable RCA", "Not available", "Limited", "Not native", "Limited", "Built-in"],
+  ["Resolution Recommendations", "Depends on expert", "Knowledge search", "Limited", "Knowledge search", "AI Copilot"],
+  ["Duplicate Detection", "Manual", "Basic", "Basic", "Basic", "Similarity AI"],
+  ["Executive Insights", "Reports", "Dashboards", "Dashboards", "Dashboards", "AI insights"],
+];
+
+const industries = [
+  "Enterprise IT",
+  "Healthcare",
+  "Manufacturing",
+  "Retail",
+  "Education",
+  "Shared Services",
+];
+
+export default function Home() {
   return (
-    <main className="min-h-screen bg-[#030712] text-white">
+    <main className="min-h-screen overflow-hidden bg-[#030712] text-white">
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#030712]/80 backdrop-blur-2xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+          <Link href="/" className="flex items-center gap-3">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500 via-fuchsia-500 to-cyan-400 text-lg font-black shadow-2xl shadow-violet-700/40">
+              T
+            </div>
+            <div>
+              <p className="text-2xl font-black tracking-tight">Ticktsphr</p>
+              <p className="-mt-1 text-[10px] font-black uppercase tracking-[0.35em] text-slate-500">
+                Predict Route Resolve
+              </p>
+            </div>
+          </Link>
+
+          <nav className="hidden items-center gap-8 text-sm font-bold text-slate-300 lg:flex">
+            <a href="#platform" className="hover:text-white">Platform</a>
+            <a href="#product" className="hover:text-white">Product</a>
+            <a href="#workflow" className="hover:text-white">Workflow</a>
+            <a href="#comparison" className="hover:text-white">Compare</a>
+            <Link href="/pricing" className="hover:text-white">Pricing</Link>
+            <Link href="/about" className="hover:text-white">About</Link>
+            <Link href="/contact" className="hover:text-white">Contact</Link>
+          </nav>
+
+          <Link
+            href="/book-demo"
+            className="rounded-full bg-white px-6 py-3 text-sm font-black text-slate-950 shadow-2xl shadow-violet-700/30 hover:bg-violet-100"
+          >
+            Book a Demo
+          </Link>
+        </div>
+      </header>
+
+      {/* HERO */}
       <section className="relative overflow-hidden border-b border-white/10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(124,58,237,.42),transparent_32%),radial-gradient(circle_at_82%_18%,rgba(34,211,238,.22),transparent_28%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_8%,rgba(124,58,237,.50),transparent_34%),radial-gradient(circle_at_85%_15%,rgba(34,211,238,.25),transparent_32%),radial-gradient(circle_at_55%_80%,rgba(236,72,153,.18),transparent_35%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.035)_1px,transparent_1px)] bg-[size:72px_72px] opacity-25" />
 
-        <div className="relative mx-auto max-w-7xl px-6 py-28 lg:py-36">
-          <div className="max-w-4xl">
-            <p className="mb-8 inline-flex rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm font-black text-cyan-200">
-              About Ticktsphr
-            </p>
+        <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 py-24 lg:grid-cols-[0.92fr_1.08fr] lg:py-32">
+          <div>
+            <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm font-black text-cyan-200">
+              <span className="h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-lg shadow-emerald-400/50" />
+              AI command layer for enterprise support
+            </div>
 
-            <h1 className="text-6xl font-black leading-[0.9] tracking-[-0.07em] sm:text-7xl lg:text-8xl">
-              We believe support teams deserve AI teammates, not more queues.
+            <h1 className="text-6xl font-black leading-[0.88] tracking-[-0.07em] sm:text-7xl lg:text-8xl">
+              Turn ticket chaos into AI-led execution.
             </h1>
 
-            <p className="mt-8 max-w-3xl text-xl leading-9 text-slate-300">
-              Ticktsphr was built to eliminate manual triage, accelerate
-              resolutions and transform support operations into a strategic,
-              intelligence-driven function.
+            <p className="mt-8 max-w-2xl text-xl leading-9 text-slate-300">
+              Ticktsphr classifies tickets, predicts priority, routes work,
+              recommends resolutions and gives leaders a live command center
+              for SLA, MTTR and support health.
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -59,238 +118,474 @@ export default function AboutPage() {
                 Book a Demo
               </Link>
 
-              <Link
-                href="/pricing"
-                className="rounded-full border border-white/15 bg-white/10 px-8 py-4 text-center font-black hover:bg-white/15"
+              <a
+                href="#product"
+                className="rounded-full border border-white/15 bg-white/10 px-8 py-4 text-center font-black backdrop-blur-xl hover:bg-white/15"
               >
-                View Pricing
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto grid max-w-7xl gap-10 px-6 py-24 lg:grid-cols-[0.75fr_1.25fr]">
-        <div>
-          <p className="font-black uppercase tracking-[0.35em] text-violet-400">
-            The Problem
-          </p>
-          <h2 className="mt-5 text-5xl font-black tracking-[-0.04em]">
-            Ticketing became storage. Support needs intelligence.
-          </h2>
-        </div>
-
-        <div className="rounded-[2rem] border border-white/10 bg-white/[0.035] p-8 text-lg leading-9 text-slate-300">
-          <p>
-            Support teams spend thousands of hours manually reading,
-            categorizing, assigning and analyzing tickets. Critical knowledge
-            remains trapped inside closed incidents. Resolution expertise
-            depends on a few experienced people. Leaders get dashboards, but
-            not always the operational intelligence needed to improve outcomes.
-          </p>
-
-          <p className="mt-6">
-            Ticktsphr was created to change that. The platform turns every
-            ticket into a source of intelligence: what it is, who should own it,
-            how urgent it is, what likely caused it and how similar issues were
-            resolved earlier.
-          </p>
-        </div>
-      </section>
-
-      <section className="border-y border-white/10 bg-white/[0.025]">
-        <div className="mx-auto max-w-7xl px-6 py-24">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="font-black uppercase tracking-[0.35em] text-cyan-300">
-              Why We Exist
-            </p>
-
-            <h2 className="mt-5 text-5xl font-black tracking-[-0.04em]">
-              Not another ticketing system. An AI operating layer.
-            </h2>
-
-            <p className="mt-6 text-lg leading-8 text-slate-400">
-              Ticktsphr sits above traditional support workflows to predict,
-              route, resolve and learn from support activity.
-            </p>
-          </div>
-
-          <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {principles.map((item, index) => (
-              <div
-                key={item.title}
-                className="rounded-[2rem] border border-white/10 bg-[#070b18] p-7"
-              >
-                <div className="mb-7 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500 to-cyan-400 text-xl font-black">
-                  {index + 1}
-                </div>
-
-                <h3 className="text-2xl font-black">{item.title}</h3>
-                <p className="mt-4 leading-7 text-slate-400">{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-24">
-        <div className="rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-violet-600 via-fuchsia-600 to-cyan-500 p-1">
-          <div className="rounded-[2.4rem] bg-[#050713] p-10 md:p-16">
-            <p className="font-black uppercase tracking-[0.35em] text-violet-300">
-              Founder Story
-            </p>
-
-            <h2 className="mt-5 max-w-5xl text-5xl font-black leading-tight tracking-[-0.04em]">
-              Built at the intersection of enterprise operations and growth.
-            </h2>
-
-            <div className="mt-8 grid gap-8 text-lg leading-9 text-slate-300 lg:grid-cols-2">
-              <div>
-                <p>
-                  Ticktsphr was founded by a team that has spent more than two
-                  decades solving complex business problems from two different
-                  directions.
-                </p>
-
-                <p className="mt-6">
-                  One side of the team has led large-scale enterprise
-                  transformation programs across global organizations, covering
-                  ERP, supply chain, customer experience, service operations and
-                  mission-critical technology environments.
-                </p>
-
-                <p className="mt-6">
-                  The other side has built and scaled high-growth businesses,
-                  led national marketing and operations functions, launched new
-                  products, shaped digital transformation initiatives and helped
-                  organizations improve acquisition, engagement and growth.
-                </p>
-              </div>
-
-              <div>
-                <p>
-                  Despite operating in different domains, both perspectives
-                  pointed to the same problem: support operations were still
-                  too dependent on manual triage, fragmented knowledge,
-                  inconsistent routing and reactive reporting.
-                </p>
-
-                <p className="mt-6">
-                  The opportunity was clear. What if support platforms could do
-                  more than store tickets? What if they could understand work,
-                  predict ownership, recommend resolutions and continuously
-                  learn from every interaction?
-                </p>
-
-                <p className="mt-6 font-bold text-white">
-                  That idea became Ticktsphr.
-                </p>
-              </div>
+                See Product
+              </a>
             </div>
 
-            <div className="mt-12 grid gap-4 md:grid-cols-4">
-              {[
-                "20+ Years Enterprise Experience",
-                "Global Transformation Programs",
-                "Growth & Operations Leadership",
-                "AI-Powered Support Vision",
-              ].map((item) => (
+            <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
+              {metrics.map((item) => (
                 <div
-                  key={item}
-                  className="rounded-3xl border border-white/10 bg-white/[0.04] p-5 text-sm font-bold text-slate-300"
+                  key={item.label}
+                  className="rounded-3xl border border-white/10 bg-white/[0.06] p-5 backdrop-blur-xl"
                 >
-                  {item}
+                  <div className="text-3xl font-black">{item.value}</div>
+                  <div className="mt-2 text-xs leading-5 text-slate-400">
+                    {item.label}
+                  </div>
                 </div>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+                    {/* COMMAND CENTER MOCKUP */}
+          <div className="relative">
+            <div className="absolute -inset-8 rounded-[3rem] bg-gradient-to-r from-violet-600/30 via-fuchsia-500/20 to-cyan-400/20 blur-3xl" />
 
-      <section className="border-y border-white/10 bg-white/[0.025]">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-24 lg:grid-cols-2">
-          <div className="rounded-[2rem] border border-white/10 bg-[#070b18] p-8">
-            <p className="font-black uppercase tracking-[0.35em] text-cyan-300">
-              Mission
-            </p>
-            <h2 className="mt-5 text-4xl font-black tracking-[-0.04em]">
-              Transform support from reactive ticket management into proactive
-              execution.
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-slate-400">
-              We help teams reduce manual work, improve routing, recommend
-              better resolutions and convert support history into reusable
-              intelligence.
-            </p>
-          </div>
-
-          <div className="rounded-[2rem] border border-white/10 bg-[#070b18] p-8">
-            <p className="font-black uppercase tracking-[0.35em] text-violet-300">
-              Vision
-            </p>
-            <h2 className="mt-5 text-4xl font-black tracking-[-0.04em]">
-              A future where every support team has an AI copilot that learns
-              with them.
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-slate-400">
-              Ticktsphr aims to help organizations understand work, route it
-              intelligently, resolve it faster and continuously improve service
-              outcomes.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-24">
-        <div className="mb-14 max-w-3xl">
-          <p className="font-black uppercase tracking-[0.35em] text-emerald-300">
-            Roadmap
-          </p>
-
-          <h2 className="mt-5 text-5xl font-black tracking-[-0.04em]">
-            Where Ticktsphr is heading.
-          </h2>
-
-          <p className="mt-6 text-lg leading-8 text-slate-400">
-            We are building toward an autonomous support operations layer where
-            AI helps teams act earlier, resolve faster and improve continuously.
-          </p>
-        </div>
-
-        <div className="grid gap-4 md:grid-cols-2">
-          {roadmap.map(([year, title]) => (
-            <div
-              key={`${year}-${title}`}
-              className="flex items-center gap-6 rounded-3xl border border-white/10 bg-white/[0.035] p-6"
-            >
-              <div className="rounded-2xl bg-violet-600/20 px-4 py-3 text-xl font-black text-violet-300">
-                {year}
+            <div className="relative rounded-[2.5rem] border border-white/10 bg-[#070b18]/90 p-5 shadow-[0_40px_140px_rgba(0,0,0,.65)] backdrop-blur-2xl">
+              <div className="mb-5 flex items-center justify-between border-b border-white/10 pb-5">
+                <div className="flex gap-2">
+                  <span className="h-3 w-3 rounded-full bg-red-400" />
+                  <span className="h-3 w-3 rounded-full bg-yellow-400" />
+                  <span className="h-3 w-3 rounded-full bg-emerald-400" />
+                </div>
+                <span className="text-xs font-bold text-slate-500">
+                  ticktsphr.ai/command-center
+                </span>
               </div>
-              <div className="text-xl font-black">{title}</div>
+
+              <div className="grid gap-4 md:grid-cols-3">
+                <div className="rounded-3xl border border-white/10 bg-white/[0.06] p-5">
+                  <p className="text-sm text-slate-400">SLA Risk</p>
+                  <p className="mt-2 text-4xl font-black text-emerald-400">
+                    Low
+                  </p>
+                </div>
+
+                <div className="rounded-3xl border border-white/10 bg-white/[0.06] p-5">
+                  <p className="text-sm text-slate-400">AI Confidence</p>
+                  <p className="mt-2 text-4xl font-black">91%</p>
+                </div>
+
+                <div className="rounded-3xl border border-white/10 bg-white/[0.06] p-5">
+                  <p className="text-sm text-slate-400">Open Queue</p>
+                  <p className="mt-2 text-4xl font-black">148</p>
+                </div>
+              </div>
+
+              <div className="mt-5 rounded-3xl border border-white/10 bg-black/20 p-5">
+                <div className="mb-4 flex items-center justify-between">
+                  <h3 className="font-black">Live Ticket Intelligence</h3>
+                  <span className="rounded-full bg-emerald-400/10 px-3 py-1 text-xs font-black text-emerald-300">
+                    LIVE
+                  </span>
+                </div>
+
+                {[
+                  ["ERP access failure", "P2", "Oracle Support", "Routed"],
+                  ["Invoice approval stuck", "P3", "Finance Ops", "Suggested"],
+                  ["App login outage", "P1", "Infra Team", "Escalated"],
+                  ["Password reset issue", "P4", "Service Desk", "Resolved"],
+                ].map(([title, priority, team, status]) => (
+                  <div
+                    key={title}
+                    className="mb-3 grid grid-cols-[1fr_auto] gap-4 rounded-2xl border border-white/10 bg-white/[0.035] p-4 last:mb-0"
+                  >
+                    <div>
+                      <p className="font-black">{title}</p>
+                      <p className="mt-1 text-sm text-slate-400">
+                        {priority} · {team}
+                      </p>
+                    </div>
+
+                    <span className="self-start rounded-full bg-violet-500/20 px-3 py-1 text-xs font-black text-violet-200">
+                      {status}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* INDUSTRY STRIP */}
+      <section className="border-b border-white/10 bg-white/[0.025] py-8">
+        <div className="mx-auto flex max-w-7xl flex-wrap justify-center gap-3 px-6">
+          {industries.map((item) => (
+            <span
+              key={item}
+              className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-sm font-bold text-slate-300"
+            >
+              {item}
+            </span>
           ))}
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 pb-24">
-        <div className="rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-violet-600 to-slate-900 p-10 md:p-16">
-          <h2 className="max-w-4xl text-5xl font-black tracking-[-0.04em]">
-            See how Ticktsphr can change support operations.
-          </h2>
-
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-violet-100">
-            Book a walkthrough and see AI classification, smart routing,
-            resolution recommendations and executive visibility in action.
+      {/* PLATFORM */}
+      <section id="platform" className="mx-auto max-w-7xl px-6 py-28">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="font-black uppercase tracking-[0.35em] text-cyan-300">
+            Platform
           </p>
 
-          <Link
-            href="/book-demo"
-            className="mt-8 inline-block rounded-full bg-white px-8 py-4 font-black text-slate-950"
-          >
-            Book a Demo
-          </Link>
+          <h2 className="mt-5 text-5xl font-black tracking-[-0.04em] sm:text-6xl">
+            A support operations brain, not just a ticket tracker.
+          </h2>
+
+          <p className="mt-6 text-lg leading-8 text-slate-400">
+            Ticktsphr turns every ticket into a structured intelligence signal
+            for agents, managers and executives.
+          </p>
+        </div>
+
+        <div className="mt-16 grid gap-6 md:grid-cols-2">
+          {capabilities.map((item, index) => (
+            <div
+              key={item.title}
+              className="group rounded-[2rem] border border-white/10 bg-white/[0.035] p-8 transition hover:-translate-y-1 hover:bg-white/[0.06]"
+            >
+              <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500 to-cyan-400 text-xl font-black shadow-xl shadow-violet-700/25">
+                {index + 1}
+              </div>
+
+              <h3 className="text-3xl font-black">{item.title}</h3>
+              <p className="mt-4 text-lg leading-8 text-slate-400">
+                {item.text}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
+            {/* PRODUCT SHOWCASE */}
+
+      <section id="product" className="border-y border-white/10 bg-white/[0.02]">
+        <div className="mx-auto max-w-7xl px-6 py-28">
+          <div className="text-center">
+            <p className="font-black uppercase tracking-[0.35em] text-violet-300">
+              Real Product
+            </p>
+
+            <h2 className="mt-5 text-5xl font-black tracking-[-0.04em] sm:text-6xl">
+              Built for real enterprise support operations.
+            </h2>
+
+            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-400">
+              Not concept screens. Not generic mockups. Actual Ticktsphr
+              capabilities used to classify, route and resolve support work.
+            </p>
+          </div>
+
+          <div className="mt-20 space-y-28">
+
+            <div className="grid items-center gap-12 lg:grid-cols-2">
+              <div>
+                <span className="rounded-full bg-cyan-500/10 px-4 py-2 text-sm font-black text-cyan-300">
+                  Executive Dashboard
+                </span>
+
+                <h3 className="mt-6 text-4xl font-black">
+                  Operational visibility for support leadership.
+                </h3>
+
+                <p className="mt-6 text-lg leading-8 text-slate-400">
+                  Track ticket volume, workload, AI adoption, SLA exposure
+                  and service health from a single executive command center.
+                </p>
+              </div>
+
+              <img
+                src="/screenshots/executive-dashboard.png"
+                alt="Executive Dashboard"
+                className="rounded-[2rem] border border-white/10 shadow-2xl"
+              />
+            </div>
+
+            <div className="grid items-center gap-12 lg:grid-cols-2">
+              <img
+                src="/screenshots/tickets-lists.png"
+                alt="Tickets"
+                className="order-2 rounded-[2rem] border border-white/10 shadow-2xl lg:order-1"
+              />
+
+              <div className="order-1 lg:order-2">
+                <span className="rounded-full bg-violet-500/10 px-4 py-2 text-sm font-black text-violet-300">
+                  Ticket Management
+                </span>
+
+                <h3 className="mt-6 text-4xl font-black">
+                  Complete lifecycle visibility.
+                </h3>
+
+                <p className="mt-6 text-lg leading-8 text-slate-400">
+                  Manage incidents, requests, approvals and escalations
+                  with intelligent ownership and operational control.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid items-center gap-12 lg:grid-cols-2">
+              <div>
+                <span className="rounded-full bg-emerald-500/10 px-4 py-2 text-sm font-black text-emerald-300">
+                  AI Copilot
+                </span>
+
+                <h3 className="mt-6 text-4xl font-black">
+                  Understand tickets before humans do.
+                </h3>
+
+                <p className="mt-6 text-lg leading-8 text-slate-400">
+                  AI predicts category, priority, support group,
+                  resolver team and probable root cause automatically.
+                </p>
+              </div>
+
+              <img
+                src="/screenshots/ai-copilot.png"
+                alt="AI Copilot"
+                className="rounded-[2rem] border border-white/10 shadow-2xl"
+              />
+            </div>
+
+            <div className="grid items-center gap-12 lg:grid-cols-2">
+              <img
+                src="/screenshots/resolution-engine.png"
+                alt="Resolution Engine"
+                className="order-2 rounded-[2rem] border border-white/10 shadow-2xl lg:order-1"
+              />
+
+              <div className="order-1 lg:order-2">
+                <span className="rounded-full bg-orange-500/10 px-4 py-2 text-sm font-black text-orange-300">
+                  Resolution Intelligence
+                </span>
+
+                <h3 className="mt-6 text-4xl font-black">
+                  Learn from every ticket.
+                </h3>
+
+                <p className="mt-6 text-lg leading-8 text-slate-400">
+                  Recommend fixes, identify duplicates and reuse
+                  organizational knowledge automatically.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* WORKFLOW */}
+
+      <section id="workflow" className="mx-auto max-w-7xl px-6 py-28">
+        <div className="text-center">
+          <p className="font-black uppercase tracking-[0.35em] text-cyan-300">
+            Workflow
+          </p>
+
+          <h2 className="mt-5 text-5xl font-black tracking-[-0.04em] sm:text-6xl">
+            From ticket creation to resolution intelligence.
+          </h2>
+        </div>
+
+        <div className="mt-20 grid gap-6">
+          {workflow.map(([step, title, text]) => (
+            <div
+              key={step}
+              className="grid items-center gap-6 rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 md:grid-cols-[120px_220px_1fr]"
+            >
+              <div className="text-5xl font-black text-violet-400">
+                {step}
+              </div>
+
+              <div className="text-2xl font-black">
+                {title}
+              </div>
+
+              <div className="text-slate-400">
+                {text}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+            {/* COMPARISON */}
+
+      <section id="comparison" className="border-y border-white/10 bg-white/[0.02]">
+        <div className="mx-auto max-w-7xl px-6 py-28">
+          <div className="text-center">
+            <p className="font-black uppercase tracking-[0.35em] text-violet-300">
+              Comparison
+            </p>
+
+            <h2 className="mt-5 text-5xl font-black tracking-[-0.04em] sm:text-6xl">
+              Traditional ticketing manages work. Ticktsphr improves it.
+            </h2>
+
+            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-400">
+              Platforms like ServiceNow, Jira and Zendesk are powerful systems
+              of record. Ticktsphr is built as an AI-first support intelligence
+              layer focused on classification, routing, resolution and learning.
+            </p>
+          </div>
+
+          <div className="mt-16 overflow-x-auto rounded-[2rem] border border-white/10 bg-[#070b18]">
+            <table className="w-full min-w-[980px] text-sm">
+              <thead>
+                <tr className="border-b border-white/10 bg-white/[0.04] text-slate-300">
+                  <th className="p-5 text-left">Capability</th>
+                  <th className="p-5 text-center">Manual Support</th>
+                  <th className="p-5 text-center">ServiceNow</th>
+                  <th className="p-5 text-center">Jira</th>
+                  <th className="p-5 text-center">Zendesk</th>
+                  <th className="p-5 text-center text-cyan-300">
+                    Ticktsphr AI
+                  </th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {comparisonRows.map((row) => (
+                  <tr key={row[0]} className="border-b border-white/10 last:border-b-0">
+                    <td className="p-5 font-bold text-white">{row[0]}</td>
+                    <td className="p-5 text-center text-slate-400">{row[1]}</td>
+                    <td className="p-5 text-center text-slate-400">{row[2]}</td>
+                    <td className="p-5 text-center text-slate-400">{row[3]}</td>
+                    <td className="p-5 text-center text-slate-400">{row[4]}</td>
+                    <td className="bg-cyan-400/5 p-5 text-center font-black text-emerald-300">
+                      {row[5]}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <p className="mx-auto mt-6 max-w-4xl text-center text-sm leading-6 text-slate-500">
+            This comparison is intended to explain positioning, not replace
+            platform-by-platform evaluation. Existing systems can remain your
+            ticketing backbone while Ticktsphr adds AI-powered intelligence on top.
+          </p>
+        </div>
+      </section>
+
+      {/* ROI */}
+
+      <section className="mx-auto max-w-7xl px-6 py-28">
+        <div className="rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-violet-600 via-fuchsia-600 to-cyan-500 p-1">
+          <div className="rounded-[2.4rem] bg-[#050713] p-10 md:p-16">
+            <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+              <div>
+                <p className="font-black uppercase tracking-[0.35em] text-cyan-300">
+                  Business Impact
+                </p>
+
+                <h2 className="mt-5 text-5xl font-black tracking-[-0.04em]">
+                  Reduce manual work. Improve support outcomes.
+                </h2>
+
+                <p className="mt-6 text-lg leading-8 text-slate-400">
+                  Ticktsphr helps teams cut repetitive triage, route faster,
+                  reuse knowledge and give leaders stronger operating visibility.
+                </p>
+
+                <Link
+                  href="/book-demo"
+                  className="mt-8 inline-block rounded-full bg-white px-8 py-4 font-black text-slate-950"
+                >
+                  Book a Demo
+                </Link>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                {metrics.map((item) => (
+                  <div
+                    key={item.label}
+                    className="rounded-3xl border border-white/10 bg-white/[0.05] p-7"
+                  >
+                    <div className="text-5xl font-black text-white">
+                      {item.value}
+                    </div>
+
+                    <p className="mt-3 text-slate-400">{item.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+
+      <footer className="border-t border-white/10 bg-[#030712]">
+        <div className="mx-auto max-w-7xl px-6 py-16">
+          <div className="grid gap-12 md:grid-cols-4">
+            <div>
+              <h3 className="text-2xl font-black">Ticktsphr</h3>
+              <p className="mt-4 text-slate-400">
+                AI-native ticket management platform for enterprise support
+                operations.
+              </p>
+              <p className="mt-6 text-sm font-black uppercase tracking-[0.3em] text-violet-400">
+                Predict • Route • Resolve
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-black">Platform</h4>
+              <ul className="mt-4 space-y-3 text-slate-400">
+                <li>AI Classification</li>
+                <li>Smart Routing</li>
+                <li>Resolution Intelligence</li>
+                <li>Executive Command Center</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-black">Solutions</h4>
+              <ul className="mt-4 space-y-3 text-slate-400">
+                <li>IT Service Desk</li>
+                <li>Customer Support</li>
+                <li>Shared Services</li>
+                <li>Enterprise Operations</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-black">Company</h4>
+              <ul className="mt-4 space-y-3 text-slate-400">
+                <li>
+                  <Link href="/about" className="hover:text-white">
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/pricing" className="hover:text-white">
+                    Pricing
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="hover:text-white">
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/book-demo" className="hover:text-white">
+                    Book Demo
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-12 border-t border-white/10 pt-8 text-sm text-slate-500">
+            © 2026 Ticktsphr. All rights reserved.
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
