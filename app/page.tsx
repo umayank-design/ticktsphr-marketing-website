@@ -438,6 +438,121 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* ROI SECTION */}
+
+<section className="relative border-y border-white/10 bg-white/[0.02]">
+  <div className="mx-auto max-w-7xl px-6 py-24">
+    <div className="text-center">
+      <p className="font-black uppercase tracking-[0.35em] text-violet-400">
+        BUSINESS IMPACT
+      </p>
+
+      <h2 className="mt-4 text-5xl font-black tracking-tight">
+        Proven ROI for Enterprise Support Teams
+      </h2>
+
+      <p className="mx-auto mt-6 max-w-3xl text-lg text-slate-400">
+        Reduce manual ticket handling, accelerate resolution times,
+        improve SLA compliance and unlock reusable organizational
+        knowledge.
+      </p>
+    </div>
+
+    <div className="mt-16 grid gap-6 md:grid-cols-4">
+      <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 text-center">
+        <div className="text-5xl font-black text-violet-400">70%</div>
+        <p className="mt-4 text-slate-300">
+          Tickets Resolved Using AI Recommendations
+        </p>
+      </div>
+
+      <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 text-center">
+        <div className="text-5xl font-black text-cyan-400">18s</div>
+        <p className="mt-4 text-slate-300">
+          Average Ticket Classification Time
+        </p>
+      </div>
+
+      <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 text-center">
+        <div className="text-5xl font-black text-emerald-400">40%</div>
+        <p className="mt-4 text-slate-300">
+          Faster Mean Time To Resolution
+        </p>
+      </div>
+
+      <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 text-center">
+        <div className="text-5xl font-black text-orange-400">24/7</div>
+        <p className="mt-4 text-slate-300">
+          Continuous AI Ticket Monitoring
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* ENTERPRISE FOOTER */}
+
+<footer className="border-t border-white/10 bg-slate-950">
+  <div className="mx-auto max-w-7xl px-6 py-16">
+    <div className="grid gap-12 md:grid-cols-4">
+
+      <div>
+        <h3 className="text-2xl font-black">Ticktsphr</h3>
+        <p className="mt-4 text-slate-400">
+          AI-native ticket management platform for enterprise
+          support operations.
+        </p>
+
+        <p className="mt-6 text-sm uppercase tracking-[0.3em] text-violet-400">
+          Predict • Route • Resolve
+        </p>
+      </div>
+
+      <div>
+        <h4 className="font-bold">Platform</h4>
+        <ul className="mt-4 space-y-3 text-slate-400">
+          <li>AI Classification</li>
+          <li>Smart Routing</li>
+          <li>Knowledge Reuse</li>
+          <li>Executive Analytics</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 className="font-bold">Solutions</h4>
+        <ul className="mt-4 space-y-3 text-slate-400">
+          <li>IT Service Desk</li>
+          <li>Customer Support</li>
+          <li>Shared Services</li>
+          <li>Enterprise Operations</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 className="font-bold">Company</h4>
+        <ul className="mt-4 space-y-3 text-slate-400">
+          <li>
+            <Link href="/about">About</Link>
+          </li>
+          <li>
+            <Link href="/contact">Contact</Link>
+          </li>
+          <li>
+            <Link href="/pricing">Pricing</Link>
+          </li>
+          <li>
+            <Link href="/book-demo">Book Demo</Link>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div className="mt-12 border-t border-white/10 pt-8 text-sm text-slate-500">
+      © 2026 Ticktsphr. All rights reserved.
+    </div>
+  </div>
+</footer>
     </main>
   );
 }
