@@ -438,6 +438,109 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="border-y border-white/10 bg-slate-950">
+  <div className="mx-auto max-w-7xl px-6 py-24">
+
+    <div className="text-center">
+      <p className="font-black uppercase tracking-[0.35em] text-violet-400">
+        COMPARISON
+      </p>
+
+      <h2 className="mt-4 text-5xl font-black">
+        Why teams choose Ticktsphr AI
+      </h2>
+
+      <p className="mx-auto mt-6 max-w-3xl text-lg text-slate-400">
+        Traditional ticketing platforms manage tickets.
+        Ticktsphr actively predicts, routes and resolves them.
+      </p>
+    </div>
+
+    <div className="mt-16 overflow-x-auto rounded-3xl border border-white/10">
+      <table className="w-full">
+        <thead>
+          <tr className="bg-white/[0.03]">
+            <th className="p-6 text-left">Capability</th>
+            <th className="p-6 text-center">Manual Support</th>
+            <th className="p-6 text-center">ServiceNow</th>
+            <th className="p-6 text-center">Jira</th>
+            <th className="p-6 text-center">Zendesk</th>
+            <th className="p-6 text-center bg-violet-600/20 text-violet-300">
+              Ticktsphr AI
+            </th>
+          </tr>
+        </thead>
+
+        <tbody className="text-slate-300">
+
+          <tr className="border-t border-white/10">
+            <td className="p-5">AI Ticket Classification</td>
+            <td className="text-center">❌</td>
+            <td className="text-center">⚠️ Add-ons</td>
+            <td className="text-center">⚠️ Limited</td>
+            <td className="text-center">⚠️ Limited</td>
+            <td className="text-center text-emerald-400">✅ Native</td>
+          </tr>
+
+          <tr className="border-t border-white/10">
+            <td className="p-5">AI Resolver Assignment</td>
+            <td className="text-center">❌</td>
+            <td className="text-center">⚠️ Rules</td>
+            <td className="text-center">⚠️ Workflow</td>
+            <td className="text-center">⚠️ Rules</td>
+            <td className="text-center text-emerald-400">✅ AI Driven</td>
+          </tr>
+
+          <tr className="border-t border-white/10">
+            <td className="p-5">Probable RCA</td>
+            <td className="text-center">❌</td>
+            <td className="text-center">❌</td>
+            <td className="text-center">❌</td>
+            <td className="text-center">❌</td>
+            <td className="text-center text-emerald-400">✅ Built-in</td>
+          </tr>
+
+          <tr className="border-t border-white/10">
+            <td className="p-5">Resolution Recommendations</td>
+            <td className="text-center">❌</td>
+            <td className="text-center">⚠️ Knowledge Search</td>
+            <td className="text-center">❌</td>
+            <td className="text-center">⚠️ Knowledge Search</td>
+            <td className="text-center text-emerald-400">✅ AI Copilot</td>
+          </tr>
+
+          <tr className="border-t border-white/10">
+            <td className="p-5">Duplicate Ticket Detection</td>
+            <td className="text-center">❌</td>
+            <td className="text-center">⚠️ Basic</td>
+            <td className="text-center">⚠️ Basic</td>
+            <td className="text-center">⚠️ Basic</td>
+            <td className="text-center text-emerald-400">✅ AI Similarity</td>
+          </tr>
+
+          <tr className="border-t border-white/10">
+            <td className="p-5">Knowledge Reuse Engine</td>
+            <td className="text-center">❌</td>
+            <td className="text-center">⚠️ Manual</td>
+            <td className="text-center">⚠️ Manual</td>
+            <td className="text-center">⚠️ Manual</td>
+            <td className="text-center text-emerald-400">✅ Automated</td>
+          </tr>
+
+          <tr className="border-t border-white/10">
+            <td className="p-5">Executive AI Insights</td>
+            <td className="text-center">❌</td>
+            <td className="text-center">⚠️ Dashboards</td>
+            <td className="text-center">⚠️ Dashboards</td>
+            <td className="text-center">⚠️ Dashboards</td>
+            <td className="text-center text-emerald-400">✅ Native AI</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
       {/* ROI SECTION */}
 
 <section className="relative border-y border-white/10 bg-white/[0.02]">
