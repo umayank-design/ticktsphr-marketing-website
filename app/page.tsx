@@ -200,7 +200,182 @@ export default function Home() {
           ))}
         </div>
       </section>
+<section className="mx-auto max-w-7xl px-6 py-28">
+  <div className="mb-16 text-center">
+    <p className="font-black uppercase tracking-[0.35em] text-cyan-300">
+      Product Showcase
+    </p>
 
+    <h2 className="mt-4 text-5xl font-black tracking-[-0.04em]">
+      Built for real enterprise support operations
+    </h2>
+
+    <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-400">
+      Ticktsphr combines AI classification, intelligent routing,
+      resolution intelligence and executive visibility into a single
+      operating platform.
+    </p>
+  </div>
+
+  <div className="space-y-32">
+
+    {/* Executive Dashboard */}
+    <div className="grid items-center gap-12 lg:grid-cols-2">
+      <div>
+        <span className="rounded-full bg-cyan-500/10 px-4 py-2 text-sm font-bold text-cyan-300">
+          Executive Dashboard
+        </span>
+
+        <h3 className="mt-6 text-4xl font-black">
+          Real-time command center for support leadership
+        </h3>
+
+        <p className="mt-6 text-lg leading-8 text-slate-400">
+          Monitor ticket volume, SLA exposure, open incidents,
+          support health and AI insights from one executive view.
+        </p>
+
+        <ul className="mt-8 space-y-3 text-slate-300">
+          <li>✓ Executive summary</li>
+          <li>✓ SLA risk monitoring</li>
+          <li>✓ AI generated insights</li>
+          <li>✓ Operational visibility</li>
+        </ul>
+      </div>
+
+      <img
+        src="/screenshots/executive-dashboard.png"
+        alt="Executive Dashboard"
+        className="rounded-3xl border border-white/10 shadow-2xl"
+      />
+    </div>
+
+    {/* Tickets */}
+    <div className="grid items-center gap-12 lg:grid-cols-2">
+      <img
+        src="/screenshots/tickets-lists.png"
+        alt="Tickets"
+        className="order-2 rounded-3xl border border-white/10 shadow-2xl lg:order-1"
+      />
+
+      <div className="order-1 lg:order-2">
+        <span className="rounded-full bg-violet-500/10 px-4 py-2 text-sm font-bold text-violet-300">
+          Ticket Management
+        </span>
+
+        <h3 className="mt-6 text-4xl font-black">
+          Complete ticket lifecycle visibility
+        </h3>
+
+        <p className="mt-6 text-lg leading-8 text-slate-400">
+          Track incidents, service requests, approvals and support
+          activities with intelligent routing and ownership controls.
+        </p>
+
+        <ul className="mt-8 space-y-3 text-slate-300">
+          <li>✓ Unified ticket view</li>
+          <li>✓ Priority tracking</li>
+          <li>✓ Assignment visibility</li>
+          <li>✓ SLA monitoring</li>
+        </ul>
+      </div>
+    </div>
+
+    {/* AI Copilot */}
+    <div className="grid items-center gap-12 lg:grid-cols-2">
+      <div>
+        <span className="rounded-full bg-emerald-500/10 px-4 py-2 text-sm font-bold text-emerald-300">
+          AI Copilot
+        </span>
+
+        <h3 className="mt-6 text-4xl font-black">
+          AI understands every ticket before humans do
+        </h3>
+
+        <p className="mt-6 text-lg leading-8 text-slate-400">
+          Automatically predicts category, priority, assignment group,
+          resolver team and probable root cause from ticket content.
+        </p>
+
+        <ul className="mt-8 space-y-3 text-slate-300">
+          <li>✓ AI categorization</li>
+          <li>✓ Confidence scoring</li>
+          <li>✓ Resolver recommendations</li>
+          <li>✓ RCA prediction</li>
+        </ul>
+      </div>
+
+      <img
+        src="/screenshots/ai-copilot.png"
+        alt="AI Copilot"
+        className="rounded-3xl border border-white/10 shadow-2xl"
+      />
+    </div>
+
+    {/* Resolution Engine */}
+    <div className="grid items-center gap-12 lg:grid-cols-2">
+      <img
+        src="/screenshots/resolution-engine.png"
+        alt="Resolution Engine"
+        className="order-2 rounded-3xl border border-white/10 shadow-2xl lg:order-1"
+      />
+
+      <div className="order-1 lg:order-2">
+        <span className="rounded-full bg-orange-500/10 px-4 py-2 text-sm font-bold text-orange-300">
+          Resolution Engine
+        </span>
+
+        <h3 className="mt-6 text-4xl font-black">
+          Accelerate support with AI recommendations
+        </h3>
+
+        <p className="mt-6 text-lg leading-8 text-slate-400">
+          AI recommends resolutions, identifies duplicate incidents,
+          analyzes similar tickets and promotes knowledge reuse.
+        </p>
+
+        <ul className="mt-8 space-y-3 text-slate-300">
+          <li>✓ Resolution suggestions</li>
+          <li>✓ Duplicate detection</li>
+          <li>✓ Similar incidents</li>
+          <li>✓ Knowledge capture</li>
+        </ul>
+      </div>
+    </div>
+
+    {/* Assignment Engine */}
+    <div className="grid items-center gap-12 lg:grid-cols-2">
+      <div>
+        <span className="rounded-full bg-pink-500/10 px-4 py-2 text-sm font-bold text-pink-300">
+          Smart Assignment Engine
+        </span>
+
+        <h3 className="mt-6 text-4xl font-black">
+          Route tickets to the right engineer instantly
+        </h3>
+
+        <p className="mt-6 text-lg leading-8 text-slate-400">
+          Support groups, subgroups, resolver teams and engineers are
+          automatically suggested based on ticket context and history.
+        </p>
+
+        <ul className="mt-8 space-y-3 text-slate-300">
+          <li>✓ Auto assignment</li>
+          <li>✓ Resolver team mapping</li>
+          <li>✓ Engineer recommendation</li>
+          <li>✓ Faster response times</li>
+        </ul>
+      </div>
+
+      <img
+        src="/screenshots/assignment-engine.png"
+        alt="Assignment Engine"
+        className="rounded-3xl border border-white/10 shadow-2xl"
+      />
+    </div>
+
+  </div>
+</section>
       <section id="workflow" className="relative border-y border-white/10 bg-white/[0.025]">
         <div className="mx-auto max-w-7xl px-6 py-28">
           <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
