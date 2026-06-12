@@ -342,6 +342,69 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* TRUST LAYER */}
+
+<section className="border-y border-white/10 bg-white/[0.02]">
+  <div className="mx-auto max-w-7xl px-6 py-28">
+    <div className="text-center">
+      <p className="font-black uppercase tracking-[0.35em] text-cyan-300">
+        Built For
+      </p>
+
+      <h2 className="mt-5 text-5xl font-black tracking-[-0.04em] sm:text-6xl">
+        Modern Enterprise Operations
+      </h2>
+
+      <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-400">
+        Ticktsphr is designed for organizations that manage high volumes
+        of incidents, requests, approvals and operational workflows.
+      </p>
+    </div>
+
+    <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+      {[
+        {
+          title: "Healthcare",
+          text: "Hospitals, clinics, healthcare operations and shared medical services.",
+        },
+        {
+          title: "Manufacturing",
+          text: "Production support, supply chain operations and enterprise ERP environments.",
+        },
+        {
+          title: "Retail",
+          text: "Store operations, customer support and omnichannel service teams.",
+        },
+        {
+          title: "Education",
+          text: "Universities, schools and large-scale academic support functions.",
+        },
+        {
+          title: "Shared Services",
+          text: "HR, finance, procurement and internal support organizations.",
+        },
+        {
+          title: "Enterprise IT",
+          text: "Service desks, infrastructure teams, ERP support and business applications.",
+        },
+      ].map((industry) => (
+        <div
+          key={industry.title}
+          className="rounded-[2rem] border border-white/10 bg-white/[0.035] p-8 transition hover:-translate-y-1 hover:bg-white/[0.06]"
+        >
+          <h3 className="text-2xl font-black">
+            {industry.title}
+          </h3>
+
+          <p className="mt-4 leading-7 text-slate-400">
+            {industry.text}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* WORKFLOW */}
       <section id="workflow" className="mx-auto max-w-7xl px-6 py-28">
