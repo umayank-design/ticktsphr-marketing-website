@@ -18,7 +18,8 @@ const plans = [
   {
     name: "Business",
     price: "Starting from ₹29,999/month",
-    description: "For growing support organizations that need speed and control.",
+    description:
+      "For growing support organizations that need speed and control.",
     highlight: true,
     features: [
       "Everything in Team",
@@ -80,7 +81,7 @@ const faqs = [
   },
   {
     q: "Can pricing change based on volume?",
-    a: "Yes. Final pricing depends on number of users, ticket volume, integrations and implementation scope.",
+    a: "Yes. Final pricing depends on users, ticket volume, integrations and implementation scope.",
   },
   {
     q: "Do you support enterprise workflows?",
@@ -114,7 +115,23 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-24">
+      <section className="mx-auto max-w-7xl px-6 py-16">
+        <div className="mb-12 grid gap-4 md:grid-cols-4">
+          {[
+            "AI Classification",
+            "Smart Routing",
+            "Resolution Intelligence",
+            "Executive Visibility",
+          ].map((item) => (
+            <div
+              key={item}
+              className="rounded-2xl border border-cyan-400/20 bg-cyan-400/5 p-4 text-center"
+            >
+              <span className="font-bold text-cyan-300">{item}</span>
+            </div>
+          ))}
+        </div>
+
         <div className="grid gap-6 lg:grid-cols-4">
           {plans.map((plan) => (
             <div
