@@ -344,6 +344,8 @@ export default function Home() {
       </section>
       {/* TRUST LAYER */}
 
+{/* TRUST LAYER */}
+
 <section className="border-y border-white/10 bg-white/[0.02]">
   <div className="mx-auto max-w-7xl px-6 py-28">
     <div className="text-center">
@@ -361,8 +363,23 @@ export default function Home() {
       </p>
     </div>
 
-    <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <div className="mt-16 mb-16 grid gap-6 md:grid-cols-4">
+      {[
+        "Enterprise IT",
+        "Oracle Ecosystems",
+        "Shared Services",
+        "AI-Powered Operations",
+      ].map((item) => (
+        <div
+          key={item}
+          className="rounded-2xl border border-cyan-400/20 bg-cyan-400/5 p-4 text-center"
+        >
+          <span className="font-bold text-cyan-300">{item}</span>
+        </div>
+      ))}
+    </div>
 
+    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {[
         {
           title: "Healthcare",
@@ -391,8 +408,10 @@ export default function Home() {
       ].map((industry) => (
         <div
           key={industry.title}
-          className="rounded-[2rem] border border-white/10 bg-white/[0.035] p-8 transition hover:-translate-y-1 hover:bg-white/[0.06]"
+          className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-slate-900 to-slate-950 p-8 transition duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:shadow-[0_20px_80px_rgba(34,211,238,0.15)]"
         >
+          <div className="mb-6 h-1 w-20 rounded-full bg-gradient-to-r from-violet-500 to-cyan-400" />
+
           <h3 className="text-2xl font-black">
             {industry.title}
           </h3>
@@ -405,7 +424,6 @@ export default function Home() {
     </div>
   </div>
 </section>
-
       {/* WORKFLOW */}
       <section id="workflow" className="mx-auto max-w-7xl px-6 py-28">
         <div className="text-center">
