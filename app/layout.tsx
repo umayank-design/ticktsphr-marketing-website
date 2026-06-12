@@ -19,40 +19,55 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://ticktsphr.com"),
 
   title: {
-    default: "Ticktsphr AI",
+    default: "Ticktsphr AI | Predict. Route. Resolve.",
     template: "%s | Ticktsphr AI",
   },
 
   description:
-    "AI-powered ticket classification, smart routing, resolution intelligence and executive support analytics.",
+    "AI-powered ticket classification, smart routing, resolution intelligence and executive visibility for enterprise support teams.",
 
   keywords: [
     "AI Ticket Management",
-    "IT Service Desk",
-    "AI Support Platform",
     "Ticket Classification",
-    "Smart Routing",
-    "Incident Management",
-    "Service Desk AI",
-    "Oracle Support",
+    "ITSM",
+    "Service Desk",
     "Enterprise Support",
-    "Resolution Intelligence",
+    "Helpdesk AI",
+    "Incident Management",
+    "Oracle Support",
+    "Ticket Routing",
+    "AI Operations",
   ],
 
   openGraph: {
-    title: "Ticktsphr AI",
+    title: "Ticktsphr AI | Predict. Route. Resolve.",
     description:
-      "Predict. Route. Resolve. AI-powered support intelligence platform.",
+      "AI-powered ticket classification, smart routing, resolution intelligence and executive visibility.",
     url: "https://ticktsphr.com",
-    siteName: "Ticktsphr AI",
+    siteName: "Ticktsphr",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Ticktsphr AI Open Graph Image",
+      },
+    ],
+    locale: "en_US",
     type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Ticktsphr AI",
+    title: "Ticktsphr AI | Predict. Route. Resolve.",
     description:
-      "AI-powered ticket classification and support intelligence.",
+      "AI-powered ticket classification, smart routing and resolution intelligence.",
+    images: ["/og-image.png"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
