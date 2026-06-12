@@ -102,7 +102,11 @@ export default function Footer() {
                   Contact
                 </Link>
               </li>
-
+<li>
+  <Link href="/roi-calculator" className="hover:text-white">
+    ROI Calculator
+  </Link>
+</li>
               <li>
                 <Link href="/book-demo" className="hover:text-white">
                   Book Demo

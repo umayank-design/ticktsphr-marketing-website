@@ -1,6 +1,42 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 
 export default function ROICalculatorPage() {
+  const [tickets, setTickets] = useState("");
+  const [triageTime, setTriageTime] = useState("");
+  const [hourlyCost, setHourlyCost] = useState("");
+  const [result, setResult] = useState<null | {
+    monthlyHours: number;
+    annualHours: number;
+    annualCost: number;
+    possibleSavings: number;
+  }>(null);
+
+  function calculateROI() {
+    const ticketCount = Number(tickets);
+    const minutes = Number(triageTime);
+    const cost = Number(hourlyCost);
+
+    if (!ticketCount || !minutes || !cost) {
+      alert("Please enter tickets per month, triage time and hourly cost.");
+      return;
+    }
+
+    const monthlyHours = (ticketCount * minutes) / 60;
+    const annualHours = monthlyHours * 12;
+    const annualCost = annualHours * cost;
+    const possibleSavings = annualCost * 0.7;
+
+    setResult({
+      monthlyHours,
+      annualHours,
+      annualCost,
+      possibleSavings,
+    });
+  }
+
   return (
     <main className="min-h-screen bg-[#030712] text-white">
       <section className="relative border-b border-white/10 px-6 py-24">
@@ -16,95 +52,128 @@ export default function ROICalculatorPage() {
           </h1>
 
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
-            Estimate the hours your support team spends classifying, routing and
-            chasing repeated tickets — then see where Ticktsphr can help reduce
-            the load.
+            Estimate the hours and cost your team spends classifying, routing
+            and chasing tickets before they reach the right owner.
           </p>
         </div>
       </section>
 
       <section className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[1fr_1fr]">
         <div className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-slate-900 to-slate-950 p-8">
-          <h2 className="text-3xl font-black">Enter your current support load</h2>
+          <h2 className="text-3xl font-black">
+            Enter your current support load
+          </h2>
 
           <div className="mt-8 grid gap-5">
-            {[
-              "Tickets per Month",
-              "Support Agents",
-              "Average Triage Time per Ticket",
-              "Average Cost per Agent Hour",
-            ].map((field) => (
-              <label key={field} className="block">
-                <span className="text-sm font-bold text-slate-300">
-                  {field}
-                </span>
+            <label className="block">
+              <span className="text-sm font-bold text-slate-300">
+                Tickets per Month
+              </span>
+              <input
+                value={tickets}
+                onChange={(e) => setTickets(e.target.value)}
+                type="number"
+                placeholder="Example: 5000"
+                className="mt-2 w-full rounded-2xl border border-white/10 bg-black/30 px-5 py-4 text-white outline-none focus:border-cyan-300"
+              />
+            </label>
 
-                <input
-                  type="text"
-                  placeholder={field}
-                  className="mt-2 w-full rounded-2xl border border-white/10 bg-black/30 px-5 py-4 text-white outline-none focus:border-cyan-300"
-                />
-              </label>
-            ))}
+            <label className="block">
+              <span className="text-sm font-bold text-slate-300">
+                Average Triage Time per Ticket (minutes)
+              </span>
+              <input
+                value={triageTime}
+                onChange={(e) => setTriageTime(e.target.value)}
+                type="number"
+                placeholder="Example: 6"
+                className="mt-2 w-full rounded-2xl border border-white/10 bg-black/30 px-5 py-4 text-white outline-none focus:border-cyan-300"
+              />
+            </label>
+
+            <label className="block">
+              <span className="text-sm font-bold text-slate-300">
+                Average Cost per Agent Hour
+              </span>
+              <input
+                value={hourlyCost}
+                onChange={(e) => setHourlyCost(e.target.value)}
+                type="number"
+                placeholder="Example: 800"
+                className="mt-2 w-full rounded-2xl border border-white/10 bg-black/30 px-5 py-4 text-white outline-none focus:border-cyan-300"
+              />
+            </label>
           </div>
 
           <button
             type="button"
+            onClick={calculateROI}
             className="mt-8 w-full rounded-full bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-500 px-8 py-4 font-black text-white shadow-[0_0_40px_rgba(124,58,237,0.35)]"
           >
             Estimate ROI
           </button>
-
-          <p className="mt-5 text-sm leading-6 text-slate-500">
-            This is a simple estimation page for lead capture. We can make this
-            fully interactive later with live calculations.
-          </p>
         </div>
 
         <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8">
           <p className="font-black uppercase tracking-[0.35em] text-cyan-300">
-            Typical Impact Areas
+            Estimated Impact
           </p>
 
-          <h2 className="mt-5 text-4xl font-black">
-            Where support teams usually lose time.
-          </h2>
+          {!result ? (
+            <>
+              <h2 className="mt-5 text-4xl font-black">
+                Your result will appear here.
+              </h2>
 
-          <div className="mt-8 space-y-5">
-            {[
-              "Manual ticket classification",
-              "Wrong assignment and reassignment",
-              "Repeated incidents with no reusable knowledge",
-              "SLA risk discovered too late",
-              "Senior engineers pulled into avoidable triage",
-            ].map((item) => (
-              <div
-                key={item}
-                className="rounded-2xl border border-white/10 bg-black/20 p-5"
-              >
-                <span className="font-bold text-slate-300">{item}</span>
+              <p className="mt-5 leading-8 text-slate-400">
+                Enter your ticket volume, triage time and hourly cost to see
+                how much manual triage may be costing your organization.
+              </p>
+            </>
+          ) : (
+            <div className="mt-8 space-y-5">
+              <div className="rounded-2xl border border-white/10 bg-black/20 p-5">
+                <p className="text-sm text-slate-400">Monthly Hours Lost</p>
+                <p className="mt-2 text-4xl font-black text-cyan-300">
+                  {result.monthlyHours.toFixed(0)}
+                </p>
               </div>
-            ))}
-          </div>
 
-          <div className="mt-10 rounded-[2rem] border border-cyan-400/20 bg-cyan-400/5 p-6">
-            <h3 className="text-2xl font-black text-cyan-300">
-              Want a personalized ROI view?
-            </h3>
+              <div className="rounded-2xl border border-white/10 bg-black/20 p-5">
+                <p className="text-sm text-slate-400">Annual Hours Lost</p>
+                <p className="mt-2 text-4xl font-black text-cyan-300">
+                  {result.annualHours.toFixed(0)}
+                </p>
+              </div>
 
-            <p className="mt-4 leading-7 text-slate-400">
-              Share your ticket volume and support structure. We’ll help estimate
-              where AI routing, resolution reuse and SLA visibility can deliver
-              measurable value.
-            </p>
+              <div className="rounded-2xl border border-white/10 bg-black/20 p-5">
+                <p className="text-sm text-slate-400">Estimated Annual Cost</p>
+                <p className="mt-2 text-4xl font-black text-cyan-300">
+                  ₹{result.annualCost.toLocaleString("en-IN", {
+                    maximumFractionDigits: 0,
+                  })}
+                </p>
+              </div>
 
-            <Link
-              href="/free-consultation"
-              className="mt-6 inline-flex rounded-full bg-white px-7 py-4 font-black text-slate-950 hover:bg-violet-100"
-            >
-              Request Free Consultation
-            </Link>
-          </div>
+              <div className="rounded-2xl border border-cyan-400/20 bg-cyan-400/5 p-5">
+                <p className="text-sm text-slate-400">
+                  Potential Savings at 70% Triage Reduction
+                </p>
+                <p className="mt-2 text-4xl font-black text-emerald-300">
+                  ₹{result.possibleSavings.toLocaleString("en-IN", {
+                    maximumFractionDigits: 0,
+                  })}
+                </p>
+              </div>
+            </div>
+          )}
+
+          <Link
+            href="/free-consultation"
+            className="mt-8 inline-flex rounded-full bg-white px-7 py-4 font-black text-slate-950 hover:bg-violet-100"
+          >
+            Request Personalized ROI Review
+          </Link>
         </div>
       </section>
     </main>

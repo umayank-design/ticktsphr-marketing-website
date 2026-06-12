@@ -40,6 +40,9 @@ export default function Navbar() {
           <Link href="/pricing" className="transition hover:text-white">
             Pricing
           </Link>
+          <Link href="/roi-calculator" className="transition hover:text-white">
+  ROI Calculator
+</Link>
 
           <Link href="/case-studies" className="transition hover:text-white">
             Case Studies
