@@ -1,18 +1,38 @@
-import Link from "next/link";
-
 export default function BookDemoPage() {
   return (
-    <main className="min-h-screen bg-slate-950 px-6 py-20 text-white">
-      <div className="mx-auto max-w-4xl">
-        <Link href="/" className="text-violet-300">← Back to Home</Link>
-        <h1 className="mt-10 text-5xl font-black tracking-tight">Book a Demo</h1>
-        <p className="mt-6 text-lg leading-8 text-slate-300">See how Ticktsphr can classify, route and resolve support tickets with AI.</p>
-        <div className="mt-10 rounded-3xl border border-white/10 bg-white/[0.04] p-8">
-          <h2 className="text-2xl font-black">Schedule a walkthrough</h2>
-          <p className="mt-4 text-slate-400">Calendly embed will be added here. For now, use the contact email below.</p>
-          <a href="mailto:hello@ticktsphr.com?subject=Ticktsphr Demo Request" className="mt-8 inline-block rounded-full bg-violet-600 px-8 py-4 font-bold hover:bg-violet-500">Request Demo</a>
+    <main className="min-h-screen bg-[#030712] text-white">
+      <section className="relative border-b border-white/10 px-6 py-24">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(124,58,237,.35),transparent_35%),radial-gradient(circle_at_80%_20%,rgba(34,211,238,.20),transparent_30%)]" />
+
+        <div className="relative mx-auto max-w-5xl text-center">
+          <p className="font-black uppercase tracking-[0.35em] text-cyan-300">
+            Book a Demo
+          </p>
+
+          <h1 className="mt-6 text-5xl font-black tracking-[-0.05em] sm:text-7xl">
+            See Ticktsphr in action.
+          </h1>
+
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+            Discover how AI-powered ticket classification, smart routing,
+            resolution intelligence and executive visibility can transform
+            your support operations.
+          </p>
         </div>
-      </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-16">
+        <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] p-4">
+          <iframe
+            src="https://calendly.com/umayank/30min"
+            width="100%"
+            height="900"
+            frameBorder="0"
+            title="Book Ticktsphr Demo"
+            className="rounded-2xl"
+          />
+        </div>
+      </section>
     </main>
   );
 }
