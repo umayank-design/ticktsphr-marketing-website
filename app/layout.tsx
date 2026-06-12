@@ -16,9 +16,44 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ticktsphr AI | Predict. Route. Resolve.",
+  metadataBase: new URL("https://ticktsphr.com"),
+
+  title: {
+    default: "Ticktsphr AI",
+    template: "%s | Ticktsphr AI",
+  },
+
   description:
-    "Ticktsphr AI is an AI-native support intelligence platform for ticket classification, smart routing, resolution intelligence, and executive visibility.",
+    "AI-powered ticket classification, smart routing, resolution intelligence and executive support analytics.",
+
+  keywords: [
+    "AI Ticket Management",
+    "IT Service Desk",
+    "AI Support Platform",
+    "Ticket Classification",
+    "Smart Routing",
+    "Incident Management",
+    "Service Desk AI",
+    "Oracle Support",
+    "Enterprise Support",
+    "Resolution Intelligence",
+  ],
+
+  openGraph: {
+    title: "Ticktsphr AI",
+    description:
+      "Predict. Route. Resolve. AI-powered support intelligence platform.",
+    url: "https://ticktsphr.com",
+    siteName: "Ticktsphr AI",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Ticktsphr AI",
+    description:
+      "AI-powered ticket classification and support intelligence.",
+  },
 };
 
 export default function RootLayout({
