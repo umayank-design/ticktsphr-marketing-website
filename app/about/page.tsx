@@ -13,9 +13,8 @@ export default function AboutPage() {
           </p>
 
           <h1 className="max-w-5xl text-6xl font-black leading-none md:text-8xl">
-            Built by operators.
-            <br />
-            Designed for support teams.
+            Built by people who have spent decades improving enterprise
+            operations.
           </h1>
 
           <p className="mt-8 max-w-3xl text-xl leading-9 text-slate-400">
@@ -27,60 +26,60 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mission */}
+      {/* Why Ticktsphr Exists */}
       <section className="mx-auto max-w-7xl px-6 py-24">
         <div className="grid gap-12 lg:grid-cols-2">
           <div>
             <p className="mb-4 text-sm font-bold uppercase tracking-[0.3em] text-cyan-400">
-              Our Mission
+              Why Ticktsphr Exists
             </p>
 
             <h2 className="text-5xl font-black">
-              Turn support from a cost center into a strategic advantage.
+              Support teams deserve more than ticket tracking.
             </h2>
           </div>
 
           <div className="space-y-6 text-lg leading-8 text-slate-400">
             <p>
-              Most ticketing systems stop at tracking work.
+              Most support organizations still rely on manual classification,
+              tribal knowledge and reactive workflows.
             </p>
 
             <p>
-              Ticktsphr goes further by predicting priorities,
-              recommending resolutions, identifying duplicate incidents,
-              routing tickets intelligently and continuously learning from
-              every interaction.
+              Tickets are often routed incorrectly, knowledge is trapped in
+              individuals and leaders struggle to gain visibility into service
+              performance.
             </p>
 
             <p>
-              The result is faster resolution, lower operating costs,
-              improved SLA performance and reusable organizational
-              knowledge.
+              Ticktsphr was built to bring intelligence into every stage of
+              support operations—from classification and routing to resolution
+              and continuous learning.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Numbers */}
+      {/* Metrics */}
       <section className="border-y border-white/10 bg-white/[0.02]">
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="grid gap-6 md:grid-cols-4">
             {[
               {
                 value: "70%",
-                label: "Tickets resolved automatically",
+                label: "Manual triage reduction target",
               },
               {
-                value: "90%",
-                label: "Reduction in manual triage",
+                value: "40%",
+                label: "MTTR improvement target",
               },
               {
-                value: "24x7",
-                label: "AI support intelligence",
+                value: "24/7",
+                label: "Operational visibility",
               },
               {
-                value: "100%",
-                label: "Knowledge retention",
+                value: "20+",
+                label: "Years of enterprise experience",
               },
             ].map((item) => (
               <div
@@ -100,11 +99,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Founder Story */}
+      {/* Expertise */}
       <section className="mx-auto max-w-7xl px-6 py-24">
         <div className="mb-16">
           <p className="mb-4 text-sm font-bold uppercase tracking-[0.3em] text-cyan-400">
-            Founder Story
+            Enterprise Expertise
           </p>
 
           <h2 className="text-5xl font-black">
@@ -115,84 +114,90 @@ export default function AboutPage() {
         <div className="grid gap-8 lg:grid-cols-2">
           <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-10">
             <div className="mb-6 text-sm font-bold uppercase tracking-[0.25em] text-violet-300">
-              Enterprise Technology Leader
+              Operations & Technology Leadership
             </div>
 
             <p className="leading-8 text-slate-400">
-              With more than two decades leading Oracle ERP, CRM and
-              enterprise transformation programs across North America,
-              Europe, the Middle East and Asia, the technology founder
-              witnessed firsthand how support organizations struggle with
-              ticket overload, tribal knowledge and inefficient routing.
-            </p>
-
-            <p className="mt-6 leading-8 text-slate-400">
-              Experience spans global consulting firms, large-scale ERP
-              programs, solution architecture, delivery governance and
-              enterprise operations across healthcare, education,
-              manufacturing and services sectors.
+              More than two decades of experience delivering enterprise
+              transformation programs, Oracle Fusion initiatives, ERP
+              implementations, global delivery leadership and operational
+              excellence programs across healthcare, manufacturing,
+              education and services.
             </p>
           </div>
 
           <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-10">
             <div className="mb-6 text-sm font-bold uppercase tracking-[0.25em] text-cyan-300">
-              Growth & Scale Operator
+              Growth & Business Leadership
             </div>
 
             <p className="leading-8 text-slate-400">
-              The business founder brings two decades of experience scaling
-              brands, products and customer acquisition engines across
-              education, fintech, telecom, travel and consumer businesses.
-            </p>
-
-            <p className="mt-6 leading-8 text-slate-400">
-              Having led marketing, operations, product innovation and
-              growth for high-scale organizations, the focus has always
-              been on building systems that deliver measurable business
-              outcomes through automation, intelligence and operational
-              excellence.
+              Extensive experience in marketing, operations, customer
+              growth, business scaling, product innovation and service
+              excellence across multiple industries and high-growth
+              organizations.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Why Ticktsphr */}
-      <section className="border-t border-white/10">
+      {/* Industries */}
+      <section className="border-y border-white/10 bg-white/[0.02]">
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="text-center">
             <p className="mb-4 text-sm font-bold uppercase tracking-[0.3em] text-violet-300">
-              Why Ticktsphr
+              Industries We Serve
             </p>
 
             <h2 className="text-5xl font-black">
-              Not another ticketing tool.
+              Designed for complex support environments.
             </h2>
-
-            <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-slate-400">
-              Ticket systems record work. Ticktsphr learns from work.
-              Every incident improves routing intelligence, resolution
-              quality and organizational knowledge.
-            </p>
           </div>
 
           <div className="mt-16 grid gap-6 md:grid-cols-3">
             {[
-              "AI Classification",
-              "AI Resolution Engine",
-              "Knowledge Reuse",
-              "Duplicate Detection",
-              "Executive Analytics",
-              "Auto Assignment",
-            ].map((item) => (
+              "Healthcare",
+              "Manufacturing",
+              "Retail",
+              "Education",
+              "Shared Services",
+              "Enterprise IT",
+            ].map((industry) => (
               <div
-                key={item}
+                key={industry}
                 className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 text-center"
               >
-                <div className="text-xl font-bold">
-                  {item}
-                </div>
+                <div className="text-xl font-bold">{industry}</div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Vision */}
+      <section className="mx-auto max-w-7xl px-6 py-24">
+        <div className="grid gap-12 lg:grid-cols-2">
+          <div>
+            <p className="mb-4 text-sm font-bold uppercase tracking-[0.3em] text-cyan-400">
+              Product Vision
+            </p>
+
+            <h2 className="text-5xl font-black">
+              Predict. Route. Resolve.
+            </h2>
+          </div>
+
+          <div className="space-y-6 text-lg leading-8 text-slate-400">
+            <p>
+              Today, Ticktsphr focuses on AI classification, intelligent
+              routing, resolution intelligence and executive visibility.
+            </p>
+
+            <p>
+              Tomorrow, we envision autonomous support operations powered
+              by predictive analytics, intelligent automation and
+              continuously learning AI systems.
+            </p>
           </div>
         </div>
       </section>
@@ -205,8 +210,9 @@ export default function AboutPage() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-xl text-white/80">
-            See how AI-powered ticket intelligence can reduce support costs,
-            improve SLA compliance and accelerate resolution times.
+            See how AI-powered ticket intelligence can improve support
+            performance, increase operational visibility and accelerate
+            resolution times.
           </p>
 
           <Link
