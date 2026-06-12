@@ -55,39 +55,6 @@ const industries = [
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#030712] text-white">
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#030712]/80 backdrop-blur-2xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-          <Link href="/" className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500 via-fuchsia-500 to-cyan-400 text-lg font-black shadow-2xl shadow-violet-700/40">
-              T
-            </div>
-            <div>
-              <p className="text-2xl font-black tracking-tight">Ticktsphr</p>
-              <p className="-mt-1 text-[10px] font-black uppercase tracking-[0.35em] text-slate-500">
-                Predict Route Resolve
-              </p>
-            </div>
-          </Link>
-
-          <nav className="hidden items-center gap-8 text-sm font-bold text-slate-300 lg:flex">
-            <a href="#platform" className="hover:text-white">Platform</a>
-            <a href="#product" className="hover:text-white">Product</a>
-            <a href="#workflow" className="hover:text-white">Workflow</a>
-            <a href="#comparison" className="hover:text-white">Compare</a>
-            <Link href="/pricing" className="hover:text-white">Pricing</Link>
-            <Link href="/about" className="hover:text-white">About</Link>
-            <Link href="/contact" className="hover:text-white">Contact</Link>
-          </nav>
-
-          <Link
-            href="/book-demo"
-            className="rounded-full bg-white px-6 py-3 text-sm font-black text-slate-950 shadow-2xl shadow-violet-700/30 hover:bg-violet-100"
-          >
-            Book a Demo
-          </Link>
-        </div>
-      </header>
-
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_8%,rgba(124,58,237,.50),transparent_34%),radial-gradient(circle_at_85%_15%,rgba(34,211,238,.25),transparent_32%),radial-gradient(circle_at_55%_80%,rgba(236,72,153,.18),transparent_35%)]" />
@@ -140,7 +107,8 @@ export default function Home() {
               ))}
             </div>
           </div>
-                    {/* COMMAND CENTER MOCKUP */}
+
+          {/* COMMAND CENTER MOCKUP */}
           <div className="relative">
             <div className="absolute -inset-8 rounded-[3rem] bg-gradient-to-r from-violet-600/30 via-fuchsia-500/20 to-cyan-400/20 blur-3xl" />
 
@@ -260,8 +228,8 @@ export default function Home() {
           ))}
         </div>
       </section>
-            {/* PRODUCT SHOWCASE */}
 
+      {/* PRODUCT SHOWCASE */}
       <section id="product" className="border-y border-white/10 bg-white/[0.02]">
         <div className="mx-auto max-w-7xl px-6 py-28">
           <div className="text-center">
@@ -280,7 +248,6 @@ export default function Home() {
           </div>
 
           <div className="mt-20 space-y-28">
-
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <div>
                 <span className="rounded-full bg-cyan-500/10 px-4 py-2 text-sm font-black text-cyan-300">
@@ -372,13 +339,11 @@ export default function Home() {
                 </p>
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
       {/* WORKFLOW */}
-
       <section id="workflow" className="mx-auto max-w-7xl px-6 py-28">
         <div className="text-center">
           <p className="font-black uppercase tracking-[0.35em] text-cyan-300">
@@ -411,8 +376,8 @@ export default function Home() {
           ))}
         </div>
       </section>
-            {/* COMPARISON */}
 
+      {/* COMPARISON */}
       <section id="comparison" className="border-y border-white/10 bg-white/[0.02]">
         <div className="mx-auto max-w-7xl px-6 py-28">
           <div className="text-center">
@@ -472,7 +437,6 @@ export default function Home() {
       </section>
 
       {/* ROI */}
-
       <section className="mx-auto max-w-7xl px-6 py-28">
         <div className="rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-violet-600 via-fuchsia-600 to-cyan-500 p-1">
           <div className="rounded-[2.4rem] bg-[#050713] p-10 md:p-16">
@@ -517,75 +481,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* FOOTER */}
-
-      <footer className="border-t border-white/10 bg-[#030712]">
-        <div className="mx-auto max-w-7xl px-6 py-16">
-          <div className="grid gap-12 md:grid-cols-4">
-            <div>
-              <h3 className="text-2xl font-black">Ticktsphr</h3>
-              <p className="mt-4 text-slate-400">
-                AI-native ticket management platform for enterprise support
-                operations.
-              </p>
-              <p className="mt-6 text-sm font-black uppercase tracking-[0.3em] text-violet-400">
-                Predict • Route • Resolve
-              </p>
-            </div>
-
-            <div>
-              <h4 className="font-black">Platform</h4>
-              <ul className="mt-4 space-y-3 text-slate-400">
-                <li>AI Classification</li>
-                <li>Smart Routing</li>
-                <li>Resolution Intelligence</li>
-                <li>Executive Command Center</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-black">Solutions</h4>
-              <ul className="mt-4 space-y-3 text-slate-400">
-                <li>IT Service Desk</li>
-                <li>Customer Support</li>
-                <li>Shared Services</li>
-                <li>Enterprise Operations</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-black">Company</h4>
-              <ul className="mt-4 space-y-3 text-slate-400">
-                <li>
-                  <Link href="/about" className="hover:text-white">
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/pricing" className="hover:text-white">
-                    Pricing
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="hover:text-white">
-                    Contact
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/book-demo" className="hover:text-white">
-                    Book Demo
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="mt-12 border-t border-white/10 pt-8 text-sm text-slate-500">
-            © 2026 Ticktsphr. All rights reserved.
-          </div>
-        </div>
-      </footer>
     </main>
   );
 }
