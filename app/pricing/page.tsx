@@ -175,7 +175,7 @@ export default function PricingPage() {
                     : "bg-white text-slate-950 hover:bg-violet-100"
                 }`}
               >
-                Book Demo
+                Ready to Be Our Next Case Study?
               </Link>
             </div>
           ))}
@@ -248,7 +248,7 @@ export default function PricingPage() {
               href="/book-demo"
               className="mt-8 inline-flex rounded-full bg-white px-8 py-4 font-black text-slate-950 hover:bg-violet-100"
             >
-              Book a Demo
+              Ready to Be Our Next Case Study?
             </Link>
           </div>
         </div>

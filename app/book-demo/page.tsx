@@ -22,7 +22,7 @@ export default function BookDemoPage() {
             </div>
 
             <h1 className="text-5xl font-black tracking-[-0.05em] sm:text-7xl">
-              See Ticktsphr in action.
+              Let's understand your support environment.
             </h1>
 
             <p className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-slate-300">
@@ -104,8 +104,10 @@ export default function BookDemoPage() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-400">
-            Select a convenient time and we'll walk you through the platform,
-            answer questions and discuss your support operations.
+            Tell us about your support organization, ticket volumes,
+current challenges and SLA pressures. We'll show how
+Ticktsphr could fit into your environment and where it can
+deliver the biggest impact.
           </p>
         </div>
 

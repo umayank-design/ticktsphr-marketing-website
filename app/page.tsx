@@ -67,15 +67,15 @@ export default function Home() {
               AI command layer for enterprise support
             </div>
 
-            <h1 className="text-6xl font-black leading-[0.88] tracking-[-0.07em] sm:text-7xl lg:text-8xl">
-  Your support team shouldn't spend hours deciding who should work on a ticket.
+            <h1 className="text-5xl font-black leading-[0.88] tracking-[-0.07em] sm:text-6xl lg:text-7xl">
+  Your support team shouldn't be fighting fires every day.
 </h1>
 
             <p className="mt-8 max-w-3xl text-xl leading-9 text-slate-300">
-  Tickets arrive every minute. Teams manually triage, assign,
-  escalate and search for answers while SLAs continue ticking.
-  Ticktsphr helps support organizations classify, prioritize,
-  route and resolve tickets faster with AI-powered intelligence.
+  Ticktsphr predicts, routes and resolves enterprise tickets
+  before they become SLA breaches. Built for AMS teams,
+  CIO offices and shared service centers running Oracle,
+  SAP and Salesforce operations.
 </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -83,14 +83,14 @@ export default function Home() {
                 href="/book-demo"
                 className="rounded-full bg-violet-600 px-8 py-4 text-center font-black shadow-2xl shadow-violet-700/40 hover:bg-violet-500"
               >
-                See How It Works
+                See Ticktsphr in Your Environment
               </Link>
 
               <a
                 href="/book-demo"
                 className="rounded-full border border-white/15 bg-white/10 px-8 py-4 text-center font-black backdrop-blur-xl hover:bg-white/15"
               >
-                Get Free Consultation
+                Let's Grab a Virtual Coffee
               </a>
             </div>
 
