@@ -5,19 +5,41 @@ export default function Footer() {
     <footer className="border-t border-white/10 bg-[#030712]">
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-12 md:grid-cols-4">
+          {/* Brand */}
+
           <div>
-            <h3 className="text-2xl font-black">Ticktsphr</h3>
-            <p className="mt-4 text-slate-400">
-              AI-native ticket management platform for enterprise support
-              operations.
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 via-fuchsia-500 to-cyan-400 font-black text-white">
+                T
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-black text-white">
+                  Ticktsphr
+                </h3>
+
+                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-cyan-300">
+                  Predict Route Resolve
+                </p>
+              </div>
+            </div>
+
+            <p className="mt-5 text-slate-400">
+              AI-powered ticket classification, smart routing,
+              resolution intelligence and executive visibility for
+              enterprise support operations.
             </p>
+
             <p className="mt-6 text-sm font-black uppercase tracking-[0.3em] text-violet-400">
-              Predict • Route • Resolve
+              AI-Native Support Intelligence
             </p>
           </div>
 
+          {/* Platform */}
+
           <div>
-            <h4 className="font-black">Platform</h4>
+            <h4 className="font-black text-white">Platform</h4>
+
             <ul className="mt-4 space-y-3 text-slate-400">
               <li>AI Classification</li>
               <li>Smart Routing</li>
@@ -26,34 +48,61 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Solutions */}
+
           <div>
-            <h4 className="font-black">Solutions</h4>
+            <h4 className="font-black text-white">Solutions</h4>
+
             <ul className="mt-4 space-y-3 text-slate-400">
               <li>IT Service Desk</li>
-              <li>Customer Support</li>
+              <li>Oracle ERP Support</li>
               <li>Shared Services</li>
               <li>Enterprise Operations</li>
             </ul>
           </div>
 
+          {/* Company */}
+
           <div>
-            <h4 className="font-black">Company</h4>
+            <h4 className="font-black text-white">Company</h4>
+
             <ul className="mt-4 space-y-3 text-slate-400">
-              <li>
-                <Link href="/about" className="hover:text-white">
-                  About
-                </Link>
-              </li>
               <li>
                 <Link href="/pricing" className="hover:text-white">
                   Pricing
                 </Link>
               </li>
+
+              <li>
+                <Link href="/case-studies" className="hover:text-white">
+                  Case Studies
+                </Link>
+              </li>
+
+              <li>
+                <Link href="/security" className="hover:text-white">
+                  Security
+                </Link>
+              </li>
+
+              <li>
+                <Link href="/faq" className="hover:text-white">
+                  FAQ
+                </Link>
+              </li>
+
+              <li>
+                <Link href="/about" className="hover:text-white">
+                  About
+                </Link>
+              </li>
+
               <li>
                 <Link href="/contact" className="hover:text-white">
                   Contact
                 </Link>
               </li>
+
               <li>
                 <Link href="/book-demo" className="hover:text-white">
                   Book Demo
@@ -63,8 +112,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-white/10 pt-8 text-sm text-slate-500">
-          © 2026 Ticktsphr. All rights reserved.
+        <div className="mt-12 border-t border-white/10 pt-8">
+          <div className="flex flex-col items-center justify-between gap-4 text-sm text-slate-500 md:flex-row">
+            <p>© 2026 Ticktsphr. All rights reserved.</p>
+
+            <p>
+              AI-Powered Ticket Intelligence Platform
+            </p>
+          </div>
         </div>
       </div>
     </footer>
