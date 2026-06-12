@@ -342,88 +342,85 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/* TRUST LAYER */}
+      <section className="border-y border-white/10 bg-white/[0.02]">
+        <div className="mx-auto max-w-7xl px-6 py-28">
+          <div className="text-center">
+            <p className="font-black uppercase tracking-[0.35em] text-cyan-300">
+              Built For
+            </p>
 
-{/* TRUST LAYER */}
+            <h2 className="mt-5 text-5xl font-black tracking-[-0.04em] sm:text-6xl">
+              Modern Enterprise Operations
+            </h2>
 
-<section className="border-y border-white/10 bg-white/[0.02]">
-  <div className="mx-auto max-w-7xl px-6 py-28">
-    <div className="text-center">
-      <p className="font-black uppercase tracking-[0.35em] text-cyan-300">
-        Built For
-      </p>
+            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-400">
+              Ticktsphr is designed for organizations that manage high volumes
+              of incidents, requests, approvals and operational workflows.
+            </p>
+          </div>
 
-      <h2 className="mt-5 text-5xl font-black tracking-[-0.04em] sm:text-6xl">
-        Modern Enterprise Operations
-      </h2>
+          <div className="mt-16 mb-16 grid gap-6 md:grid-cols-4">
+            {[
+              "Enterprise IT",
+              "Oracle Ecosystems",
+              "Shared Services",
+              "AI-Powered Operations",
+            ].map((item) => (
+              <div
+                key={item}
+                className="rounded-2xl border border-cyan-400/20 bg-cyan-400/5 p-4 text-center"
+              >
+                <span className="font-bold text-cyan-300">{item}</span>
+              </div>
+            ))}
+          </div>
 
-      <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-400">
-        Ticktsphr is designed for organizations that manage high volumes
-        of incidents, requests, approvals and operational workflows.
-      </p>
-    </div>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                title: "Healthcare",
+                text: "Hospitals, clinics, healthcare operations and shared medical services.",
+              },
+              {
+                title: "Manufacturing",
+                text: "Production support, supply chain operations and enterprise ERP environments.",
+              },
+              {
+                title: "Retail",
+                text: "Store operations, customer support and omnichannel service teams.",
+              },
+              {
+                title: "Education",
+                text: "Universities, schools and large-scale academic support functions.",
+              },
+              {
+                title: "Shared Services",
+                text: "HR, finance, procurement and internal support organizations.",
+              },
+              {
+                title: "Enterprise IT",
+                text: "Service desks, infrastructure teams, ERP support and business applications.",
+              },
+            ].map((industry) => (
+              <div
+                key={industry.title}
+                className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-slate-900 to-slate-950 p-8 transition duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:shadow-[0_20px_80px_rgba(34,211,238,0.15)]"
+              >
+                <div className="mb-6 h-1 w-20 rounded-full bg-gradient-to-r from-violet-500 to-cyan-400" />
 
-    <div className="mt-16 mb-16 grid gap-6 md:grid-cols-4">
-      {[
-        "Enterprise IT",
-        "Oracle Ecosystems",
-        "Shared Services",
-        "AI-Powered Operations",
-      ].map((item) => (
-        <div
-          key={item}
-          className="rounded-2xl border border-cyan-400/20 bg-cyan-400/5 p-4 text-center"
-        >
-          <span className="font-bold text-cyan-300">{item}</span>
+                <h3 className="text-2xl font-black">{industry.title}</h3>
+
+                <p className="mt-4 leading-7 text-slate-400">
+                  {industry.text}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
-    </div>
+      </section>
 
-    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {[
-        {
-          title: "Healthcare",
-          text: "Hospitals, clinics, healthcare operations and shared medical services.",
-        },
-        {
-          title: "Manufacturing",
-          text: "Production support, supply chain operations and enterprise ERP environments.",
-        },
-        {
-          title: "Retail",
-          text: "Store operations, customer support and omnichannel service teams.",
-        },
-        {
-          title: "Education",
-          text: "Universities, schools and large-scale academic support functions.",
-        },
-        {
-          title: "Shared Services",
-          text: "HR, finance, procurement and internal support organizations.",
-        },
-        {
-          title: "Enterprise IT",
-          text: "Service desks, infrastructure teams, ERP support and business applications.",
-        },
-      ].map((industry) => (
-        <div
-          key={industry.title}
-          className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-slate-900 to-slate-950 p-8 transition duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:shadow-[0_20px_80px_rgba(34,211,238,0.15)]"
-        >
-          <div className="mb-6 h-1 w-20 rounded-full bg-gradient-to-r from-violet-500 to-cyan-400" />
-
-          <h3 className="text-2xl font-black">
-            {industry.title}
-          </h3>
-
-          <p className="mt-4 leading-7 text-slate-400">
-            {industry.text}
-          </p>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
       {/* WORKFLOW */}
       <section id="workflow" className="mx-auto max-w-7xl px-6 py-28">
         <div className="text-center">
@@ -446,13 +443,9 @@ export default function Home() {
                 {step}
               </div>
 
-              <div className="text-2xl font-black">
-                {title}
-              </div>
+              <div className="text-2xl font-black">{title}</div>
 
-              <div className="text-slate-400">
-                {text}
-              </div>
+              <div className="text-slate-400">{text}</div>
             </div>
           ))}
         </div>
@@ -494,7 +487,10 @@ export default function Home() {
 
               <tbody>
                 {comparisonRows.map((row) => (
-                  <tr key={row[0]} className="border-b border-white/10 last:border-b-0">
+                  <tr
+                    key={row[0]}
+                    className="border-b border-white/10 last:border-b-0"
+                  >
                     <td className="p-5 font-bold text-white">{row[0]}</td>
                     <td className="p-5 text-center text-slate-400">{row[1]}</td>
                     <td className="p-5 text-center text-slate-400">{row[2]}</td>
@@ -514,6 +510,58 @@ export default function Home() {
             platform-by-platform evaluation. Existing systems can remain your
             ticketing backbone while Ticktsphr adds AI-powered intelligence on top.
           </p>
+        </div>
+      </section>
+
+      {/* WHY TEAMS CHOOSE TICKTSPHR */}
+      <section className="border-y border-white/10 bg-white/[0.02]">
+        <div className="mx-auto max-w-7xl px-6 py-28">
+          <div className="text-center">
+            <p className="font-black uppercase tracking-[0.35em] text-violet-300">
+              Why Teams Choose Ticktsphr
+            </p>
+
+            <h2 className="mt-5 text-5xl font-black tracking-[-0.04em] sm:text-6xl">
+              Built for support teams that need speed, accuracy and visibility.
+            </h2>
+
+            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-400">
+              Ticktsphr helps teams reduce repetitive work, route tickets faster,
+              reuse knowledge and give leaders clearer operational control.
+            </p>
+          </div>
+
+          <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                title: "AI-First by Design",
+                text: "Classification, routing and resolution intelligence are built into the platform from day one.",
+              },
+              {
+                title: "Faster Resolution",
+                text: "Agents get suggested ownership, RCA clues and resolution guidance without wasting time.",
+              },
+              {
+                title: "Knowledge Reuse",
+                text: "Every resolved ticket becomes fuel for better future recommendations.",
+              },
+              {
+                title: "Executive Visibility",
+                text: "Leaders get a clearer view of SLA risk, backlog, workload and support health.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-slate-900 to-slate-950 p-8 transition duration-300 hover:-translate-y-2 hover:border-violet-400/30 hover:shadow-[0_20px_80px_rgba(139,92,246,0.18)]"
+              >
+                <div className="mb-6 h-1 w-20 rounded-full bg-gradient-to-r from-violet-500 to-cyan-400" />
+
+                <h3 className="text-2xl font-black">{item.title}</h3>
+
+                <p className="mt-4 leading-7 text-slate-400">{item.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
