@@ -35,6 +35,9 @@ export default function Navbar() {
           <Link href="/pricing" className="hover:text-white">
             Pricing
           </Link>
+          <Link href="/case-studies" className="hover:text-white">
+  Case Studies
+</Link>
           <Link href="/about" className="hover:text-white">
             About
           </Link>
