@@ -87,11 +87,11 @@ export default function Home() {
               </Link>
 
               <a
-                href="/book-demo"
-                className="rounded-full border border-white/15 bg-white/10 px-8 py-4 text-center font-black backdrop-blur-xl hover:bg-white/15"
-              >
-                Let's Grab a Virtual Coffee
-              </a>
+  href="/free-consultation"
+  className="rounded-full border border-white/15 bg-white/10 px-8 py-4 text-center font-black backdrop-blur-xl hover:bg-white/15"
+>
+  Let&apos;s Understand Your Environment
+</a>
             </div>
 
             <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
