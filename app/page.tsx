@@ -68,28 +68,29 @@ export default function Home() {
             </div>
 
             <h1 className="text-6xl font-black leading-[0.88] tracking-[-0.07em] sm:text-7xl lg:text-8xl">
-              Turn ticket chaos into AI-led execution.
-            </h1>
+  Your support team shouldn't spend hours deciding who should work on a ticket.
+</h1>
 
-            <p className="mt-8 max-w-2xl text-xl leading-9 text-slate-300">
-              Ticktsphr classifies tickets, predicts priority, routes work,
-              recommends resolutions and gives leaders a live command center
-              for SLA, MTTR and support health.
-            </p>
+            <p className="mt-8 max-w-3xl text-xl leading-9 text-slate-300">
+  Tickets arrive every minute. Teams manually triage, assign,
+  escalate and search for answers while SLAs continue ticking.
+  Ticktsphr helps support organizations classify, prioritize,
+  route and resolve tickets faster with AI-powered intelligence.
+</p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/book-demo"
                 className="rounded-full bg-violet-600 px-8 py-4 text-center font-black shadow-2xl shadow-violet-700/40 hover:bg-violet-500"
               >
-                Book a Demo
+                See How It Works
               </Link>
 
               <a
-                href="#product"
+                href="/book-demo"
                 className="rounded-full border border-white/15 bg-white/10 px-8 py-4 text-center font-black backdrop-blur-xl hover:bg-white/15"
               >
-                See Product
+                Get Free Consultation
               </a>
             </div>
 
@@ -179,19 +180,49 @@ export default function Home() {
         </div>
       </section>
 
-      {/* INDUSTRY STRIP */}
-      <section className="border-b border-white/10 bg-white/[0.025] py-8">
-        <div className="mx-auto flex max-w-7xl flex-wrap justify-center gap-3 px-6">
-          {industries.map((item) => (
-            <span
-              key={item}
-              className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-sm font-bold text-slate-300"
-            >
-              {item}
-            </span>
-          ))}
-        </div>
-      </section>
+      {/* TRUST STRIP */}
+
+<section className="border-b border-white/10 bg-white/[0.03]">
+  <div className="mx-auto flex max-w-7xl flex-wrap justify-center gap-12 px-6 py-8 text-center">
+
+    <div>
+      <div className="text-3xl font-black text-cyan-300">
+        70%
+      </div>
+      <div className="text-sm text-slate-400">
+        Less Manual Triage
+      </div>
+    </div>
+
+    <div>
+      <div className="text-3xl font-black text-cyan-300">
+        40%
+      </div>
+      <div className="text-sm text-slate-400">
+        Faster Resolution
+      </div>
+    </div>
+
+    <div>
+      <div className="text-3xl font-black text-cyan-300">
+        24/7
+      </div>
+      <div className="text-sm text-slate-400">
+        Operational Visibility
+      </div>
+    </div>
+
+    <div>
+      <div className="text-3xl font-black text-cyan-300">
+        Enterprise
+      </div>
+      <div className="text-sm text-slate-400">
+        Ready
+      </div>
+    </div>
+
+  </div>
+</section>
 
       {/* PLATFORM */}
       <section id="platform" className="mx-auto max-w-7xl px-6 py-28">
